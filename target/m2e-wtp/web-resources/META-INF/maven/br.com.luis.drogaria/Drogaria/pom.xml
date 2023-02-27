@@ -4,6 +4,14 @@
 	<artifactId>Drogaria</artifactId>
 	<version>0.0.1</version>
 	<packaging>war</packaging>
+	<!-- Codificação dos caracteres -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<failOnMissingWebXml>false</failOnMissingWebXml>
+		<maven.test.skip>true</maven.test.skip>
+	</properties>
 	<build>
 		<plugins>
 			<plugin>
@@ -18,4 +26,17 @@
 			</plugin>
 		</plugins>
 	</build>
+	<!-- Dependências-->
+	<!-- Hibernate Core-->
+	<!--6.1.7-->
+	<dependencies>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>4.3.11.Final</version>
+		</dependency>
+	</dependencies>
+
+
+
 </project>
