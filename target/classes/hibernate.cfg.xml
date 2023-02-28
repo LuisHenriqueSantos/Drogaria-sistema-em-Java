@@ -48,6 +48,8 @@
 		<!-- Mapeamentos das entidades --> 
 		<!-- resource="org/hibernate/tutorial/domain/Event.hbm.xml" /> -->
 		 <mapping class="br.com.luis.drogaria.domain.Estado"/>
+		 <mapping class="br.com.luis.drogaria.domain.Fabricante"/>
+		 <mapping class="br.com.luis.drogaria.domain.Cidade"/>
 		 	
 	</session-factory>
 
