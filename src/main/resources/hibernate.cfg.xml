@@ -45,11 +45,10 @@
 
 		<property name="hbm2ddl.auto">create</property>
 
-		<!-- comentando a linha de baixo para não dar erro no projeto. -->
-
-		<!-- <mapping -->
+		<!-- Mapeamentos das entidades --> 
 		<!-- resource="org/hibernate/tutorial/domain/Event.hbm.xml" /> -->
-
+		 <mapping class="br.com.luis.drogaria.domain.Estado"/>
+		 	
 	</session-factory>
 
 </hibernate-configuration>
