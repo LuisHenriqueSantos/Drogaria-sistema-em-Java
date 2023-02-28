@@ -8,8 +8,10 @@
 	<session-factory>
 
 		<!-- Configurações de conexões com o banco de dados, -->
-		<!-- Conexão do Driver: padrão vem: org.hsqldb.jdbcDriver, Mas esse é a conexão:com.mysql.jdbc.Driver -->
-		<!-- Conexão url: Java usa o jdbc ou odbc, conexão vem assim jdbc:hsqldb:hsql://localhost, 	ajustado a conexão: jdbc:mysql://127.0.0.1:3306/drogaria -->
+		<!-- Conexão do Driver: padrão vem: org.hsqldb.jdbcDriver, Mas esse é a 
+			conexão:com.mysql.jdbc.Driver -->
+		<!-- Conexão url: Java usa o jdbc ou odbc, conexão vem assim jdbc:hsqldb:hsql://localhost, 
+			ajustado a conexão: jdbc:mysql://127.0.0.1:3306/drogaria -->
 		<!-- Conexão do Driver: -->
 		<!-- Conexão do Driver: -->
 
@@ -18,27 +20,35 @@
 		<property name="connection.username">root</property>
 		<property name="connection.password">mgtrda9139293@</property>
 
-		<!-- JDBC connection pool (use the built-in) -->
+		<!-- JDBC connection pool (use the built-in) Aqui é para informar quantas 
+			sessoões ele vai abrir -->
+		<!-- -->
 		<property name="connection.pool_size">1</property>
 
-		<!-- SQL dialect -->
-		<property name="dialect">org.hibernate.dialect.HSQLDialect</property>
+		<!-- SQL dialect, idioma do banco (org.hibernate.dialect.HSQLDialect) -->
+		<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
 
-		<!-- Enable Hibernate's automatic session context management -->
+		<!-- Gerenciamento do contexto das sessões -->
 		<property name="current_session_context_class">thread</property>
 
-		<!-- Disable the second-level cache -->
+		<!-- Cache de segundo nível -->
 		<property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
 
-		<!-- Echo all executed SQL to stdout -->
+		<!-- Mostra as SQL geradas -->
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
 
-		<!-- Drop and re-create the database schema on startup -->
-		<property name="hbm2ddl.auto">update</property>
+		<!-- Criar as tabelas do banco de dados -->
+		<!--Create: Ele apaga tudo, até os dados e cria tabelas do zero -->
+		<!--Update: Ele tanta manter os dados e atualizar as tabelas -->
+		<!--Validate: Ele checa se o que esta no java é o que esta no banco -->
 
-		<mapping
-			resource="org/hibernate/tutorial/domain/Event.hbm.xml" />
+		<property name="hbm2ddl.auto">create</property>
+
+		<!-- comentando a linha de baixo para não dar erro no projeto. -->
+
+		<!-- <mapping -->
+		<!-- resource="org/hibernate/tutorial/domain/Event.hbm.xml" /> -->
 
 	</session-factory>
 
