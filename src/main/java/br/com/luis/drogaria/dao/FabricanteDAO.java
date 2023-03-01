@@ -6,3 +6,4 @@ public class FabricanteDAO extends GenericDAO<Fabricante> {
 	
 
 }
+  

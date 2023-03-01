@@ -1,6 +1,9 @@
 package br.com.luis.drogaria.dao;
 
 import java.lang.reflect.ParameterizedType;
+import java.util.List;
+
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -35,5 +38,22 @@ public class GenericDAO<Entidade> { // Criação do genérico para o pools
 		} finally {
 			sessao.close(); // Finaliza a sessão
 		}
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Entidade> listar(){
+		Session sessao = HibernateUtil.getFabricaDeSessoes().openSession();
+		try {
+			Criteria consulta = sessao.createCriteria(classe);
+			List<Entidade> resultado = consulta.list();
+			return resultado;
+		} catch (RuntimeException erro) {
+			throw erro;
+		}finally {
+			sessao.close();
+		}
+			
+	
+	
 	}
 }
