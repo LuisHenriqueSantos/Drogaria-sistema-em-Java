@@ -21,7 +21,7 @@
 		<property name="connection.password">mgtrda9139293@</property>
 		
 		<!-- JDBC connection pool (use the built-in) Aqui é para informar quantas 
-			sessoões ele vai abrir -->
+			sessões ele vai abrir -->
 		<!-- -->
 		<property name="connection.pool_size">1</property>
 
@@ -48,12 +48,16 @@
 		<!-- Mapeamentos das entidades --> 
 		<!-- resource="org/hibernate/tutorial/domain/Event.hbm.xml" /> -->
 		 <mapping class="br.com.luis.drogaria.domain.Cidade"/>
+		 <mapping class="br.com.luis.drogaria.domain.Clientes"/>  
 		 <mapping class="br.com.luis.drogaria.domain.Estado"/>
 		 <mapping class="br.com.luis.drogaria.domain.Fabricante"/>
-		 <mapping class="br.com.luis.drogaria.domain.Produtos"/>
-		 <mapping class="br.com.luis.drogaria.domain.Clientes"/>  
+		 <mapping class="br.com.luis.drogaria.domain.Funcionario"/>
+		 <mapping class="br.com.luis.drogaria.domain.ItemVenda"/>
 		 <mapping class="br.com.luis.drogaria.domain.Pessoa"/>
+		 <mapping class="br.com.luis.drogaria.domain.Produtos"/>
 		 <mapping class="br.com.luis.drogaria.domain.Usuario"/>
+		 <mapping class="br.com.luis.drogaria.domain.Venda"/>
+		 
 	</session-factory>
 
 </hibernate-configuration>
