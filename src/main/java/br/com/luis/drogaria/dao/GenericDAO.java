@@ -1,15 +1,23 @@
 package br.com.luis.drogaria.dao;
 
+import java.lang.reflect.ParameterizedType;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import br.com.luis.drogaria.util.HibernateUtil;
 
 public class GenericDAO<Entidade> { // Criação do genérico para o pools
+	
+	private Class<Entidade> classe;
+
+	@SuppressWarnings("unchecked")
+	public GenericDAO() {
+		this.classe = (Class<Entidade>) ((ParameterizedType) getClass().getGenericSuperclass())
+				.getActualTypeArguments()[0]; // Esse cod ele pega no refactor, qual o tipo da class filha
+	}
 
 	public void salvar(Entidade entidade) { // Salvar o genérico
 		Session sessao = HibernateUtil.getFabricaDeSessoes().openSession(); // Criando a sessão para pegar a fábrica de
-																	
 
 		Transaction transacao = null; // Declarar objeto de transação
 
