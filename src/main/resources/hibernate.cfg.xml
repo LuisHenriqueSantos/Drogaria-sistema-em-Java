@@ -19,7 +19,7 @@
 		<property name="connection.url">jdbc:mysql://127.0.0.1:3306/drogaria</property>
 		<property name="connection.username">root</property>
 		<property name="connection.password">mgtrda9139293@</property>
-
+		
 		<!-- JDBC connection pool (use the built-in) Aqui é para informar quantas 
 			sessoões ele vai abrir -->
 		<!-- -->
@@ -53,6 +53,7 @@
 		 <mapping class="br.com.luis.drogaria.domain.Produtos"/>
 		 <mapping class="br.com.luis.drogaria.domain.Clientes"/>  
 		 <mapping class="br.com.luis.drogaria.domain.Pessoa"/>
+		 <mapping class="br.com.luis.drogaria.domain.Usuario"/>
 	</session-factory>
 
 </hibernate-configuration>

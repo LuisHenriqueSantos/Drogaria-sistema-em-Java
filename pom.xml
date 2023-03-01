@@ -35,6 +35,8 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>4.3.11.Final</version>
 		</dependency>
+		
+		
 		<!-- MYSQL-->
 		<dependency>
 			<groupId>mysql</groupId>
