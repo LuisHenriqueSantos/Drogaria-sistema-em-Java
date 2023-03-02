@@ -52,8 +52,20 @@ public class GenericDAO<Entidade> { // Criação do genérico para o pools
 		}finally {
 			sessao.close();
 		}
-			
-	
-	
 	}
+	
+	@SuppressWarnings("unchecked")
+	public Entidade buscar(Long codigo){
+		Session sessao = HibernateUtil.getFabricaDeSessoes().openSession();
+		try {
+			Criteria consulta = sessao.createCriteria(classe);
+			Entidade resultado = (Entidade) consulta.uniqueResult();
+			return resultado;
+		} catch (RuntimeException erro) {
+			throw erro;
+		}finally {
+			sessao.close();
+		}
+	}
+	
 }
