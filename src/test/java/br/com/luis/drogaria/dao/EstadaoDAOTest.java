@@ -31,58 +31,56 @@ public class EstadaoDAOTest {
 			System.out.println(estado.getCodigo() + " - " + estado.getSigla() + " - " + estado.getNome());
 		}
 	}
-
+	
 	@Test
 	@Ignore
-	public void buscar() {
-		Long codigo = 2L;
-
+	public void buscar(){
+		Long codigo = 3L;
+		
 		EstadoDAO estadoDAO = new EstadoDAO();
 		Estado estado = estadoDAO.buscar(codigo);
-
-		if (estado == null) {
+		
+		if(estado == null){
 			System.out.println("Nenhum registro encontrado");
-		} else {
+		}else{
 			System.out.println("Registro encontrado:");
 			System.out.println(estado.getCodigo() + " - " + estado.getSigla() + " - " + estado.getNome());
 		}
 	}
-
+	
 	@Test
 	@Ignore
-	public void excluir() {
+	public void excluir(){
+		Long codigo = 9L;
+		EstadoDAO estadoDAO = new EstadoDAO();
+		Estado estado = estadoDAO.buscar(codigo);
+		
+		if(estado == null){
+			System.out.println("Nenhum registro encontrado");
+		}else{
+			estadoDAO.excluir(estado);
+			System.out.println("Registro removido:");
+			System.out.println(estado.getCodigo() + " - " + estado.getSigla() + " - " + estado.getNome());
+		}
+	}
+	
+	@Test
+	@Ignore
+	public void editar(){
 		Long codigo = 4L;
 		EstadoDAO estadoDAO = new EstadoDAO();
 		Estado estado = estadoDAO.buscar(codigo);
-
-		if (estado == null) {
-			System.out.println("Nenhum registro encontradro");
-		} else {
-			estadoDAO.excluir(estado);
-			System.out.println("Registro excluido com sucesso");
-			System.out.println(estado.getCodigo() + " - " + estado.getSigla() + " - " + estado.getNome());
-		}
-
-	}
-
-	// Método de Editar
-	@Test
-	@Ignore
-	public void editar() {
-		Long codigo = 7L;
-		EstadoDAO estadoDAO = new EstadoDAO();
-		Estado estado = estadoDAO.buscar(codigo);
-
-		if (estado == null) {
+		
+		if(estado == null){
 			System.out.println("Nenhum registro encontrado");
-		} else {
+		}else{
 			System.out.println("Registro editado - Antes:");
 			System.out.println(estado.getCodigo() + " - " + estado.getSigla() + " - " + estado.getNome());
-
-			estado.setNome("Sao Paulo");
-			estado.setSigla("SP");
+			
+			estado.setNome("Santa Catarina");
+			estado.setSigla("SC");
 			estadoDAO.editar(estado);
-
+			
 			System.out.println("Registro editado - Depois:");
 			System.out.println(estado.getCodigo() + " - " + estado.getSigla() + " - " + estado.getNome());
 		}

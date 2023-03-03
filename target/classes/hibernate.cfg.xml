@@ -43,7 +43,7 @@
 		<!--Update: Ele tanta manter os dados e atualizar as tabelas -->
 		<!--Validate: Ele checa se o que esta no java é o que esta no banco -->
 
-		<property name="hbm2ddl.auto">validate</property>
+		<property name="hbm2ddl.auto">update</property>
 
 		<!-- Mapeamentos das entidades --> 
 		<!-- resource="org/hibernate/tutorial/domain/Event.hbm.xml" /> -->
