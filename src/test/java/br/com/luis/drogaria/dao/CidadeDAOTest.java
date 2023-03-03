@@ -39,19 +39,20 @@ public class CidadeDAOTest {
 			System.out.println();
 		}
 		
+
 	}
 
 	@Test
-	//@Ignore
+	@Ignore
 	public void buscar() {
 		Long codigo = 4L;
 
 		CidadeDAO cidadeDAO = new CidadeDAO();
 		Cidade cidade = cidadeDAO.buscar(codigo);
-		
-		if(cidade == null){
+
+		if (cidade == null) {
 			System.out.println("Nenhum registro encontrado");
-		}else{
+		} else {
 			System.out.println("Registro encontrado:");
 			System.out.println(cidade.getCodigo() + " - " + cidade.getNome() + " - " + cidade.getEstado());
 		}
@@ -61,5 +62,31 @@ public class CidadeDAOTest {
 		System.out.println("Código do Estado: " + cidade.getEstado().getCodigo());
 		System.out.println("Sigla do Estado: " + cidade.getEstado().getSigla());
 		System.out.println("Nome do Estado: " + cidade.getEstado().getNome());
+	}
+
+	@Test
+	@Ignore
+	public void excluir() {
+		Long codigo = 2L;
+
+		CidadeDAO cidadeDAO = new CidadeDAO();
+		Cidade cidade = cidadeDAO.buscar(codigo);
+
+		if (cidade == null) {
+			System.out.println("Nenhum registro encontrado");
+		} else {
+			cidadeDAO.excluir(cidade);
+			System.out.println("Registro removido:");
+			System.out.println(cidade.getCodigo() + " - " + cidade.getNome());
+		}
+
+		System.out.println("Cidade removida");
+		System.out.println("Código da Cidade: " + cidade.getCodigo());
+		System.out.println("Nome da Cidade: " + cidade.getNome());
+		System.out.println("Código do Estado: " + cidade.getEstado().getCodigo());
+		System.out.println("Sigla do Estado: " + cidade.getEstado().getSigla());
+		System.out.println("Nome do Estado: " + cidade.getEstado().getNome());
+		System.out.println();
+
 	}
 }
