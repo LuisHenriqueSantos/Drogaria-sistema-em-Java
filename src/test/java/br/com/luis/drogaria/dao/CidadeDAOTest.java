@@ -38,7 +38,6 @@ public class CidadeDAOTest {
 			System.out.println("Nome do Estado: " + cidade.getEstado().getNome());
 			System.out.println();
 		}
-		
 
 	}
 
@@ -67,18 +66,20 @@ public class CidadeDAOTest {
 	@Test
 	@Ignore
 	public void excluir() {
-		Long codigo = 2L;
+		Long codigo = 3L;
 
 		CidadeDAO cidadeDAO = new CidadeDAO();
 		Cidade cidade = cidadeDAO.buscar(codigo);
 
-		if (cidade == null) {
-			System.out.println("Nenhum registro encontrado");
-		} else {
-			cidadeDAO.excluir(cidade);
-			System.out.println("Registro removido:");
-			System.out.println(cidade.getCodigo() + " - " + cidade.getNome());
-		}
+//		if (cidade == null) {
+//			System.out.println("Nenhum registro encontrado");
+//		} else {
+//			cidadeDAO.excluir(cidade);
+//			System.out.println("Registro removido:");
+//			System.out.println(cidade.getCodigo() + " - " + cidade.getNome());
+//		}
+
+		cidadeDAO.excluir(cidade);
 
 		System.out.println("Cidade removida");
 		System.out.println("Código da Cidade: " + cidade.getCodigo());
@@ -88,5 +89,42 @@ public class CidadeDAOTest {
 		System.out.println("Nome do Estado: " + cidade.getEstado().getNome());
 		System.out.println();
 
+	}
+
+	@Test
+	//@Ignore
+
+	public void editar(){
+		Long codigoCidade = 4L;
+		Long codigoEstado = 4L;
+		
+		EstadoDAO estadoDAO = new EstadoDAO();
+		Estado estado = estadoDAO.buscar(codigoEstado);
+		
+		System.out.println("Código do Estado: " + estado.getCodigo());
+		System.out.println("Sigla do Estado: " + estado.getSigla());
+		System.out.println("Nome do Estado: " + estado.getNome());
+		
+		CidadeDAO cidadeDAO = new CidadeDAO();
+		Cidade cidade = cidadeDAO.buscar(codigoCidade);
+		
+		System.out.println("Cidade A Ser Editada");
+		System.out.println("Código da Cidade: " + cidade.getCodigo());
+		System.out.println("Nome da Cidade: " + cidade.getNome());
+		System.out.println("Código do Estado: " + cidade.getEstado().getCodigo());
+		System.out.println("Sigla do Estado: " + cidade.getEstado().getSigla());
+		System.out.println("Nome do Estado: " + cidade.getEstado().getNome());
+		
+		cidade.setNome("Guarapuava");
+		cidade.setEstado(estado);
+		
+		cidadeDAO.editar(cidade);
+		
+		System.out.println("Cidade Editada");
+		System.out.println("Código da Cidade: " + cidade.getCodigo());
+		System.out.println("Nome da Cidade: " + cidade.getNome());
+		System.out.println("Código do Estado: " + cidade.getEstado().getCodigo());
+		System.out.println("Sigla do Estado: " + cidade.getEstado().getSigla());
+		System.out.println("Nome do Estado: " + cidade.getEstado().getNome());
 	}
 }
