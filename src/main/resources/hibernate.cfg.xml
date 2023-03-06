@@ -38,6 +38,7 @@
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
 
+		
 		<!-- Criar as tabelas do banco de dados -->
 		<!--Create: Ele apaga tudo, até os dados e cria tabelas do zero -->
 		<!--Update: Ele tanta manter os dados e atualizar as tabelas -->
