@@ -42,7 +42,7 @@ public class UsuarioDAOTest {
 
 	public void listar() {
 		PessoaDAO pessoaDAO = new PessoaDAO();
-		Pessoa pessoa = pessoaDAO.buscar(1L);
+		Pessoa pessoa = pessoaDAO.buscar(2L);
 
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		List<Usuario> resultado = usuarioDAO.listar();
@@ -59,33 +59,63 @@ public class UsuarioDAOTest {
 	@Ignore
 
 	public void buscar() {
-		Long codigo = 1L;
-		PessoaDAO pessoaDAO = new PessoaDAO();
-		Pessoa pessoa = pessoaDAO.buscar(codigo);
+		Long codigo = 2L;
+		UsuarioDAO usuarioDAO = new UsuarioDAO();
+		Usuario usuario = usuarioDAO.buscar(codigo);
 
-		if (pessoa == null) {
+		if (usuario == null) {
 			System.out.println("Nenhuma pessoa encontrada!");
 		} else {
 			System.out.println("Pessoa localizada!");
-			System.out.println(pessoa.getNome());
+			System.out
+					.println(usuario.getPessoa().getNome() + " - " + usuario.getCodigo() + " - " + usuario.getAtivo());
 		}
 
 	}
 
 	@Test
-	//@Ignore
+	@Ignore
 
 	public void excluir() {
 		Long codigo = 1L;
-		PessoaDAO pessoaDAO = new PessoaDAO();
-		Pessoa pessoa = pessoaDAO.buscar(codigo);
+		UsuarioDAO usuarioDAO = new UsuarioDAO();
+		Usuario usuario = usuarioDAO.buscar(codigo);
 
-		if (pessoa == null) {
-			System.out.println("Nenhuma pessoa encontrada!");
+		if (usuario == null) {
+			System.out.println("Nenhum usuário encontrado!");
 		} else {
-			pessoaDAO.excluir(pessoa);
+			usuarioDAO.excluir(usuario);
 			System.out.println("Pessoa excluida com sucesso");
-			System.out.println(pessoa.getNome() + " - " + pessoa.getEmail() + " - " + pessoa.getCodigo());
+			System.out.println(usuario.getCodigo() + " - " + usuario.getSenha() + " - " + usuario.getTipo());
+
+		}
+
+	}
+
+	@Test
+	@Ignore
+
+	public void editar() {
+		Long codigo = 1L;
+		UsuarioDAO usuarioDAO = new UsuarioDAO();
+		Usuario usuario = usuarioDAO.buscar(codigo);
+
+		if (usuario == null) {
+			System.out.println("Nenhuma pessoa encontrada");
+		} else {
+			System.out.println("Registro encontrado");
+
+			System.out.println(usuario.getCodigo() + " - " + usuario.getSenha() + " - " + usuario.getTipo() + " - "
+					+ usuario.getAtivo() + " - " + usuario.getPessoa().getNome());
+
+			usuario.setCodigo(1L);
+			usuario.setSenha("123456");
+			usuario.setAtivo(true);
+			usuarioDAO.editar(usuario);
+
+			System.out.println("Registro editado - Depois:");
+			System.out.println(usuario.getCodigo() + " - " + usuario.getSenha() + " - " + usuario.getTipo() + " - "
+					+ usuario.getAtivo());
 
 		}
 
