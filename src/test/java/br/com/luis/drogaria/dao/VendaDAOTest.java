@@ -1,6 +1,7 @@
 package br.com.luis.drogaria.dao;
 
 import java.math.BigDecimal;
+
 import java.util.Date;
 import java.util.List;
 
@@ -38,7 +39,7 @@ public class VendaDAOTest {
 	}
 
 	@Test
-	// @Ignore
+	@Ignore
 	public void listar() {
 		FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
 		Funcionario funcionario = funcionarioDAO.buscar(1L);
@@ -76,18 +77,51 @@ public class VendaDAOTest {
 	}
 
 	@Test
-	//@Ignore
+	@Ignore
 	public void excluir() {
 		Long codigo = 2L;
 		VendaDAO vendaDAO = new VendaDAO();
 		Venda vendas = vendaDAO.buscar(codigo);
-	
+
 		if (vendas == null) {
 			System.out.println("Nunhuma venda encontrada");
 		} else {
-			
+			vendaDAO.excluir(vendas);
+			System.out.println("Venda excluida");
+			System.out.println(vendas.getCliente() + " - " + vendas.getHorario() + " - " + vendas.getValorTotal()
+					+ " - " + vendas.getFuniconario());
 		}
-		
 	}
-	
+
+	@Test
+	// @Ignore
+	public void editar() {
+		FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+		Funcionario funcionario = funcionarioDAO.buscar(1L);
+
+		ClienteDAO clienteDAO = new ClienteDAO();
+		Clientes clientes = clienteDAO.buscar(2L);
+
+		Long codigo = 2L;
+		VendaDAO vendaDAO = new VendaDAO();
+		Venda vendas = vendaDAO.buscar(codigo);
+		
+		if (vendas == null) {
+			System.out.println("Nenhuma venda encontrada!");
+		} else {
+			System.out.println(vendas.getHorario() + " - " + vendas.getValorTotal() + " - " + vendas.getCliente()
+					+ " - " + vendas.getFuniconario().getPessoa().getNome());
+
+			vendas.setHorario(new Date(14));
+			vendas.setValorTotal(new BigDecimal("15.60"));
+			vendas.setCliente(clientes);
+			vendas.setFuniconario(funcionario);
+			vendaDAO.editar(vendas);
+
+			System.out.println("Registro editado - Depois:");
+			System.out.println(vendas.getHorario() + " - " + vendas.getValorTotal() + " - " + vendas.getCliente()
+					+ " - " + vendas.getFuniconario().getPessoa().getNome());
+		}
+
+	}
 }
