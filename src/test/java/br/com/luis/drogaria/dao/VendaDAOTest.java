@@ -77,7 +77,7 @@ public class VendaDAOTest {
 	}
 
 	@Test
-	@Ignore
+	//@Ignore
 	public void excluir() {
 		Long codigo = 2L;
 		VendaDAO vendaDAO = new VendaDAO();
@@ -94,7 +94,7 @@ public class VendaDAOTest {
 	}
 
 	@Test
-	// @Ignore
+	@Ignore
 	public void editar() {
 		FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
 		Funcionario funcionario = funcionarioDAO.buscar(1L);
