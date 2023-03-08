@@ -7,28 +7,34 @@
 
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Fabricante</title>
+	<title>Cidades</title>
 </h:head>
 <h:body>
 	<h:form>
-		<p:panel header="Farbricante - Listagem">
+		<p:panel header="Cidades - Listagem">
 			<p:dataTable emptyMessage="Nenhum registro eccontrado"
 				paginator="true">
 				<f:facet name="header">
 					<p:commandButton value="Novo" oncomplete="PF('dialogo').show();" />
 				</f:facet>
 				<p:column headerText="Nome"></p:column>
-				<p:column headerText="Descrição"></p:column>
+				<p:column headerText="Estado"></p:column>
+				<p:column headerText="Opções"></p:column>
 			</p:dataTable>
 		</p:panel>
 	</h:form>
-	<p:dialog header="Fabricante - Descrição" widgetVar="dialogo"
+	<p:dialog header="Cidades - Cadastro" widgetVar="dialogo"
 		draggable="false" resizable="false" modal="true" closable="false">
 		<h:form>
 			<h:panelGrid columns="2">
-				<p:outputLabel value="Descrição"></p:outputLabel>
+				<p:outputLabel value="Nome"></p:outputLabel>
 				<p:inputText maxlength="50" size="30"></p:inputText>
-			</h:panelGrid>
+
+				<p:outputLabel value="Estado"></p:outputLabel>
+				<p:selectOneMenu filter="true">
+					<f:selectItem itemValue="" itemLabel="Selecione um estado"></f:selectItem>
+				</p:selectOneMenu>
+			</h:panelGrid>   
 			<h:panelGrid columns="2">
 				<p:commandButton value="Salvar"></p:commandButton>
 				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();"></p:commandButton>
