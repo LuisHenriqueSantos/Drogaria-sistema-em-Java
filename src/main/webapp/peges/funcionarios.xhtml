@@ -27,52 +27,21 @@
 			</p:dataTable>
 		</p:panel>
 	</h:form>
-	<p:dialog header="Pessoas - Cadastro" widgetVar="dialogo"
+	<p:dialog header="Funcionário - Cadastro" widgetVar="dialogo"
 		draggable="false" resizable="false" modal="true" closable="false">
 		<h:form>
 			<h:panelGrid columns="2">
-				<p:outputLabel value="Nome"></p:outputLabel>
-				<p:inputText maxlength="50" size="30"></p:inputText>
-
-				<p:outputLabel value="RG"></p:outputLabel>
-				<p:inputText maxlength="12" size="30"></p:inputText>
-
-				<p:outputLabel value="CPF"></p:outputLabel>
-				<p:inputText maxlength="14" size="30"></p:inputText>
-
-				<p:outputLabel value="E-meail"></p:outputLabel>
-				<p:inputText maxlength="100" size="30"></p:inputText>
-
-				<p:outputLabel value="Bairro"></p:outputLabel>
-				<p:inputText maxlength="30" size="30"></p:inputText>
-
-				<p:outputLabel value="CEP"></p:outputLabel>
-				<p:inputText maxlength="50" size="30"></p:inputText>
-
-				<p:outputLabel value="Rua"></p:outputLabel>
-				<p:inputText maxlength="100" size="30"></p:inputText>
-
-				<p:outputLabel value="Número"></p:outputLabel>
-				<p:inputText maxlength="5" size="30"></p:inputText>
-
-				<p:outputLabel value="Complemento"></p:outputLabel>
-				<p:inputText maxlength="10" size="30"></p:inputText>
-
-				<p:outputLabel value="Celular"></p:outputLabel>
-				<p:inputText maxlength="14" size="30"></p:inputText>
-				
-				<p:outputLabel value="Telefone"></p:outputLabel>
-				<p:inputText maxlength="13" size="30"></p:inputText>
-
-				<p:outputLabel value="Estado"></p:outputLabel>
+				<p:outputLabel value="Pessoa"></p:outputLabel>
 				<p:selectOneMenu filter="true">
-					<f:selectItem itemValue="" itemLabel="Selecione um estado"></f:selectItem>
+					<f:selectItem itemValue="" itemLabel="Selecione uma pessoa"></f:selectItem>
 				</p:selectOneMenu>
-				
-				<p:outputLabel value="Cidade"></p:outputLabel>
-				<p:selectOneMenu filter="true">
-					<f:selectItem itemValue="" itemLabel="Selecione uma cidade"></f:selectItem>
-				</p:selectOneMenu>
+
+				<p:outputLabel value="Carteira de trabalho "></p:outputLabel>
+				<p:inputText maxlength="15" size="30"></p:inputText>
+
+				<p:outputLabel value="Data de Admissão"></p:outputLabel>
+				<p:calendar />
+
 			</h:panelGrid>
 			<h:panelGrid columns="2">
 				<p:commandButton value="Salvar"></p:commandButton>
