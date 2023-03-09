@@ -117,7 +117,7 @@ public class PessoaDAOTest {
 			pessoa.setCpf("888.888.888.88");
 			pessoa.setEmail("julina_teste@gmail.com");
 			pessoa.setNome("Julina Kelly");
-			pessoa.setNumero("11");
+			pessoa.setNumero(new Short("5"));
 			pessoa.setRg("88.888.888-8");
 			pessoa.setRua("Alegria");
 			pessoa.setTelefone("(14)996672954");

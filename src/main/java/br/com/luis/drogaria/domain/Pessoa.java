@@ -2,6 +2,8 @@ package br.com.luis.drogaria.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @SuppressWarnings("serial")
 @Entity
@@ -42,11 +44,19 @@ public class Pessoa extends GenericDomain {
 		this.rua = rua;
 	}
 
-	public String getNumero() {
+	public Short getNumero() {
 		return numero;
 	}
+	
+	public Cidade getCidade() {
+		return cidade;
+	}
+	
+	public void setCidade(Cidade cidade)	  {
+		this.cidade = cidade;
+	}
 
-	public void setNumero(String numero) {
+	public void setNumero(Short numero) {
 		this.numero = numero;
 	}
 
@@ -108,7 +118,7 @@ public class Pessoa extends GenericDomain {
 	private String rua;
 
 	@Column(nullable = false)
-	private String numero;
+	private Short numero;
 
 	@Column(length = 30, nullable = false)
 	private String bairro;
@@ -128,5 +138,8 @@ public class Pessoa extends GenericDomain {
 	@Column(length = 100, nullable = false)
 	private String email;
 
+	@OneToOne
+	@JoinColumn(nullable = false)
+	private Cidade cidade;
 
 }
