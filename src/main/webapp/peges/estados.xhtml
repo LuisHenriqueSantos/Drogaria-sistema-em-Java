@@ -16,7 +16,7 @@
 			<p:dataTable emptyMessage="Nenhum registro eccontrado"
 				paginator="true">
 				<f:facet name="header">
-					<p:commandButton value="Novo" oncomplete="PF('dialogo').show();" />
+					<p:commandButton value="Novo" oncomplete="PF('dialogo').show();" actionListener="#{estadoBean.novo()}"/>
 				</f:facet>
 				<p:column headerText="Nome"></p:column>
 				<p:column headerText="Sigla"></p:column>
@@ -29,9 +29,9 @@
 		<h:form>
 			<h:panelGrid columns="2">
 				<p:outputLabel value="Nome"></p:outputLabel>
-				<p:inputText maxlength="50" size="30"></p:inputText>
+				<p:inputText maxlength="50" size="30" value="#{estadoBean.estado.nome}" />
 				<p:outputLabel value="Sigla"></p:outputLabel>
-				<p:inputText maxlength="2" size="10"></p:inputText>
+				<p:inputText maxlength="2" size="10" value="#{estadoBean.estado.sigla}"></p:inputText>
 			</h:panelGrid>
 			<h:panelGrid columns="2">
 				<p:commandButton value="Salvar"	actionListener="#{estadoBean.salvar}" update=":mensagem" />
