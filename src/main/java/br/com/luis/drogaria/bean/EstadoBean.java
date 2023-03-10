@@ -1,7 +1,9 @@
 package br.com.luis.drogaria.bean;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
@@ -28,6 +30,7 @@ import br.com.luis.drogaria.domain.Estado;
 public class EstadoBean implements Serializable {
 	@SuppressWarnings("unused")
 	private Estado estado;
+	private List<Estado> estados;
 
 	public Estado getEstado() {
 		return estado;
@@ -35,6 +38,26 @@ public class EstadoBean implements Serializable {
 
 	public Estado setEstado() {
 		return estado;
+	}
+
+	public List<Estado> getEstados() {
+		return estados;
+	}
+
+	public void setEstados(List<Estado> estados) {
+		this.estados = estados;
+	}
+
+	@PostConstruct
+	public void listar() {
+		try {
+			EstadoDAO estadoDAO = new EstadoDAO();
+			estados = estadoDAO.listar();
+		} catch (RuntimeException errro) {
+			org.omnifaces.util.Messages.addGlobalInfo("Ocorrreu um erro ao exbir a listagem dos estados!");
+			errro.printStackTrace();
+		}
+
 	}
 
 	public void novo() {
@@ -50,16 +73,10 @@ public class EstadoBean implements Serializable {
 
 			org.omnifaces.util.Messages.addGlobalInfo("Estado salvo com sucesso");
 
-			throw new RuntimeException("Erro forçado");
 		} catch (RuntimeException errro) {
-			org.omnifaces.util.Messages.addGlobalInfo("Ocorrreu um erro!");
+			org.omnifaces.util.Messages.addGlobalInfo("Ocorrreu um erro ao salvar o estado!");
 			errro.printStackTrace();
 		}
-//		String texto = "Teste paro o botão salvar";
-//		FacesMessage menssagem = new FacesMessage(FacesMessage.SEVERITY_ERROR, texto, texto);
-//
-//		FacesContext contexto = FacesContext.getCurrentInstance();
-//		contexto.addMessage(null, menssagem);
-	}
 
+	}
 }
