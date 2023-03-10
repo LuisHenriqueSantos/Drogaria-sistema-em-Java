@@ -20,7 +20,11 @@ public class GenericDAO<Entidade> {
 				.getActualTypeArguments()[0];
 	}
 
-	// Método salvar
+	/**
+	 * Método salvar
+	 * 
+	 * @param entidade
+	 */
 	public void salvar(Entidade entidade) {
 		Session sessao = HibernateUtil.getFabricaDeSessoes().openSession();
 
@@ -42,8 +46,11 @@ public class GenericDAO<Entidade> {
 		}
 	}
 
-	// Método Listar
-
+	/**
+	 * Método Buscar
+	 * 
+	 * @return
+	 */
 	@SuppressWarnings("unchecked")
 	public List<Entidade> listar() {
 		Session sessao = HibernateUtil.getFabricaDeSessoes().openSession();
@@ -58,8 +65,12 @@ public class GenericDAO<Entidade> {
 		}
 	}
 
-	// Método Buscar
-
+	/**
+	 * Método Buscar
+	 * 
+	 * @param codigo
+	 * @return
+	 */
 	@SuppressWarnings("unchecked")
 	public Entidade buscar(Long codigo) {
 		Session sessao = HibernateUtil.getFabricaDeSessoes().openSession();
@@ -75,10 +86,13 @@ public class GenericDAO<Entidade> {
 		}
 	}
 
-	// Método de exclussão
-
+	/**
+	 * Método de exclussão
+	 * 
+	 * @param entidade
+	 */
 	public void excluir(Entidade entidade) {
-		Session sessao = HibernateUtil.getFabricaDeSessoes().openSession(); 
+		Session sessao = HibernateUtil.getFabricaDeSessoes().openSession();
 
 		Transaction transacao = null;
 
@@ -97,13 +111,15 @@ public class GenericDAO<Entidade> {
 			sessao.close();
 		}
 	}
-	
-	
-	// Método de Editar 
-	
+
+	/**
+	 * Método de Editar
+	 * 
+	 * @param entidade
+	 */
 	public void editar(Entidade entidade) {
 		Session sessao = HibernateUtil.getFabricaDeSessoes().openSession();
-		
+
 		Transaction transacao = null;
 
 		try {
@@ -120,7 +136,33 @@ public class GenericDAO<Entidade> {
 		} finally {
 			sessao.close();
 		}
-		
+
 	}
-	
+
+	/**
+	 * Método merge
+	 * 
+	 * @param entidade
+	 */
+	public void merge(Entidade entidade) {
+		Session sessao = HibernateUtil.getFabricaDeSessoes().openSession();
+
+		Transaction transacao = null;
+
+		try {
+			transacao = sessao.beginTransaction();
+			sessao.merge(entidade);
+			transacao.commit();
+
+		} catch (RuntimeException erro) {
+
+			if (transacao != null) {
+				transacao.rollback();
+			}
+			throw erro;
+		} finally {
+			sessao.close();
+		}
+	}
+
 }

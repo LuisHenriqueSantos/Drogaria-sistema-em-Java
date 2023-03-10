@@ -74,7 +74,7 @@ public class FabricanteDAOTest {
 
 	// Método de Editar
 	@Test
-	// @Ignore
+	@Ignore
 	public void editar() {
 		Long codigo = 5L;
 		FabricanteDAO fabricanteDAO = new FabricanteDAO();
@@ -94,6 +94,24 @@ public class FabricanteDAOTest {
 			System.out.println("Registro editado - Depois:");
 			System.out.println(fabricante.getCodigo() + " - " + fabricante.getDescricao());
 		}
+	}
+
+	/**
+	 * 
+	 */
+	@Test
+	//@Ignore
+	public void merge() {
+//		Fabricante fabricante = new Fabricante();
+//		fabricante.setDescricao("Matrix");
+//
+//		FabricanteDAO fabricanteDAO = new FabricanteDAO();
+//		fabricanteDAO.merge(fabricante);
+		
+		FabricanteDAO fabricanteDAO = new FabricanteDAO();
+		Fabricante fabricante = fabricanteDAO.buscar(7L);
+		fabricante.setDescricao("Matrix filial");
+		fabricanteDAO.merge(fabricante);
 	}
 
 }
