@@ -16,7 +16,9 @@
 			<p:dataTable emptyMessage="Nenhum registro eccontrado"
 				paginator="true">
 				<f:facet name="header">
-					<p:commandButton value="Novo" oncomplete="PF('dialogo').show();" actionListener="#{estadoBean.novo()}"/>
+					<p:commandButton value="Novo" oncomplete="PF('dialogo').show();"
+						actionListener="#{estadoBean.novo()}"
+						update=":formCadastro:painel" />
 				</f:facet>
 				<p:column headerText="Nome"></p:column>
 				<p:column headerText="Sigla"></p:column>
@@ -26,15 +28,19 @@
 	</h:form>
 	<p:dialog header="Estados - Cadastro" widgetVar="dialogo"
 		draggable="false" resizable="false" modal="true" closable="false">
-		<h:form>
-			<h:panelGrid columns="2">
+		<h:form id="formCadastro">
+			<h:panelGrid id="painel" columns="2">
 				<p:outputLabel value="Nome"></p:outputLabel>
-				<p:inputText maxlength="50" size="30" value="#{estadoBean.estado.nome}" />
+				<p:inputText maxlength="50" size="30"
+					value="#{estadoBean.estado.nome}" />
+
 				<p:outputLabel value="Sigla"></p:outputLabel>
-				<p:inputText maxlength="2" size="10" value="#{estadoBean.estado.sigla}"></p:inputText>
+				<p:inputText maxlength="2" size="10"
+					value="#{estadoBean.estado.sigla}"></p:inputText>
 			</h:panelGrid>
 			<h:panelGrid columns="2">
-				<p:commandButton value="Salvar"	actionListener="#{estadoBean.salvar}" update=":mensagem" />
+				<p:commandButton value="Salvar"
+					actionListener="#{estadoBean.salvar}" update=":mensagem" />
 				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();"></p:commandButton>
 			</h:panelGrid>
 		</h:form>

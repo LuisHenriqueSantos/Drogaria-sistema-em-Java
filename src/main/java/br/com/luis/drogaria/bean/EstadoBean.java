@@ -1,5 +1,7 @@
 package br.com.luis.drogaria.bean;
 
+import java.io.Serializable;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
@@ -18,10 +20,10 @@ import br.com.luis.drogaria.domain.Estado;
  *
  */
 
-@SuppressWarnings("unused")
+@SuppressWarnings({ "unused", "serial" })
 @ManagedBean
 @ViewScoped  
-public class EstadoBean {
+public class EstadoBean implements Serializable {
 	@SuppressWarnings("unused")
 	private Estado estado; 
 	
