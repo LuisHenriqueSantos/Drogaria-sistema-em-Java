@@ -33,7 +33,7 @@
 				<p:inputText maxlength="2" size="10"></p:inputText>
 			</h:panelGrid>
 			<h:panelGrid columns="2">
-				<p:commandButton value="Salvar" actionListener="#{estadoBean.}"/>
+				<p:commandButton value="Salvar" actionListener="#{estadoBean().salvar}" />
 				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();"></p:commandButton>
 			</h:panelGrid>
 		</h:form>

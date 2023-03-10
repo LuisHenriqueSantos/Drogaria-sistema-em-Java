@@ -5,8 +5,8 @@ import javax.faces.bean.ManagedBean;
 @ManagedBean
 public class EstadoBean {
 	@SuppressWarnings("unused")
-	private void salvar(){
-		System.out.println("Teste");
+	public void salvar(){
+		System.out.println("Teste paro o botão salvar");
 	}
 	
 }
