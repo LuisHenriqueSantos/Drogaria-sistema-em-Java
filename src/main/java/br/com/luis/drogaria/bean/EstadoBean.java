@@ -64,7 +64,7 @@ public class EstadoBean implements Serializable {
 	public void salvar() {
 		try {
 			EstadoDAO estadoDAO = new EstadoDAO();
-			estadoDAO.salvar(estado);
+			estadoDAO.merge(estado);
 
 			novo();
 			estados = estadoDAO.listar();
@@ -75,7 +75,6 @@ public class EstadoBean implements Serializable {
 			Messages.addGlobalInfo("Ocorrreu um erro ao salvar o estado!");
 			erro.printStackTrace();
 		}
-
 	}
 
 	public void excluir(ActionEvent evento) {
@@ -95,4 +94,8 @@ public class EstadoBean implements Serializable {
 
 	}
 
+	public void editar(ActionEvent evento) {
+		estado = (Estado) evento.getComponent().getAttributes().get("estadoSelecionado");
+
+	}
 }
