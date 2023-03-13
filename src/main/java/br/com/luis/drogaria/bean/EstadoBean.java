@@ -65,11 +65,12 @@ public class EstadoBean implements Serializable {
 			estadoDAO.salvar(estado);
 
 			novo();
-
+			estados = estadoDAO.listar();
+			
 			org.omnifaces.util.Messages.addGlobalInfo("Estado salvo com sucesso");
 
 		} catch (RuntimeException errro) {
-			org.omnifaces.util.Messages.addGlobalInfo("Ocorrreu um erro ao salvar o estado!");
+			Messages.addGlobalInfo("Ocorrreu um erro ao salvar o estado!");
 			errro.printStackTrace();
 		}
 
