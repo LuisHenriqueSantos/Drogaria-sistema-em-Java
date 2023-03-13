@@ -31,11 +31,11 @@
 				</p:column>
 
 				<p:column headerText="Opções">
-					<p:commandButton icon="ui-icon-trash" 
-					actionListener="#{estadoBean.excluir}" update=":mensagem">
+					<p:commandButton icon="ui-icon-trash"
+						actionListener="#{estadoBean.excluir}" update=":mensagem: frmlistar:tabela">
 						<p:confirm header="confirmação"
 							message="Deseja excluir o estado? " icon="ui-icon-alert" />
-							<f:attribute name="estadoSelecionado" value="#{cursor}" />
+						<f:attribute name="estadoSelecionado" value="#{cursor}" />
 					</p:commandButton>
 				</p:column>
 			</p:dataTable>
