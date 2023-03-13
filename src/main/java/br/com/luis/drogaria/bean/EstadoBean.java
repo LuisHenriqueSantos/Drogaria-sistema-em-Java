@@ -4,16 +4,11 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-import javax.faces.context.FacesContext;
-import javax.faces.view.facelets.FaceletContext;
-import javax.management.RuntimeErrorException;
+import javax.faces.event.ActionEvent;
 
-import org.jboss.logging.Messages;
-
-import com.mysql.cj.protocol.Message;
+import org.omnifaces.util.Messages;
 
 import br.com.luis.drogaria.dao.EstadoDAO;
 import br.com.luis.drogaria.domain.Estado;
@@ -79,4 +74,10 @@ public class EstadoBean implements Serializable {
 		}
 
 	}
+
+	public void excluir(ActionEvent evento) {
+		estado = (Estado) evento.getComponent().getAttributes().get("estadoSelecionado");
+		Messages.addGlobalInfo("Nome " + estado.getNome() + "Sigla " + estado.getSigla());
+	}
+
 }
