@@ -1,7 +1,6 @@
 package br.com.luis.drogaria.domain;
 
 import java.io.Serializable;
-import java.util.Set;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,5 +22,10 @@ public class GenericDomain implements Serializable {
 
 	public void setCodigo(long codigo) {
 		this.codigo = codigo;
+	}
+	
+	@Override
+	public String toString() {
+	    return String.format("%s[id=%d]", getClass().getSimpleName(), getCodigo());
 	}
 }
