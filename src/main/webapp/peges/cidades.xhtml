@@ -12,32 +12,48 @@
 <h:body>
 	<h:form>
 		<p:panel header="Cidades - Listagem">
-			<p:dataTable emptyMessage="Nenhum registro eccontrado"
-				paginator="true">
+			<p:dataTable emptyMessage="Nenhum registro encontrado."
+				paginator="true" value="#{cidadeBean.cidades}" var="cidade" rows="5">
 				<f:facet name="header">
-					<p:commandButton value="Novo" oncomplete="PF('dialogo').show();" />
+					<p:commandButton value="Novo" actionListener="#{cidadeBean.novo}"
+						oncomplete="PF('dialogo').show();" update=":formCadastro:painel" />
 				</f:facet>
-				<p:column headerText="Nome"></p:column>
-				<p:column headerText="Estado"></p:column>
-				<p:column headerText="Opções"></p:column>
+
+				<p:column headerText="Nome" filterBy="#{cidade.nome}"
+					sortBy="#{cidade.nome}">
+					<h:outputText value="#{cidade.nome}" />
+				</p:column>
+
+				<p:column headerText="Estado" filterBy="#{cidade.estado.nome}"
+					sortBy="#{cidade.estado.nome}">
+					<h:outputText value="#{cidade.estado.nome}" />
+					<h:outputText value=" - " />
+					<h:outputText value="#{cidade.estado.sigla}" />
+				</p:column>
+
+				<p:column headerText="Opções">
+				</p:column>
 			</p:dataTable>
 		</p:panel>
 	</h:form>
+
 	<p:dialog header="Cidades - Cadastro" widgetVar="dialogo"
 		draggable="false" resizable="false" modal="true" closable="false">
-		<h:form>
-			<h:panelGrid columns="2">
-				<p:outputLabel value="Nome"></p:outputLabel>
-				<p:inputText maxlength="50" size="30"></p:inputText>
+		<h:form id="formCadastro">
+			<h:panelGrid id="painel" columns="2">
+				<p:outputLabel value="Nome:" />
+				<p:inputText maxlength="50" size="30"
+					value="#{cidadeBean.cidade.nome}" />
 
-				<p:outputLabel value="Estado"></p:outputLabel>
-				<p:selectOneMenu filter="true">
-					<f:selectItem itemValue="" itemLabel="Selecione um estado"></f:selectItem>
+				<p:outputLabel value="Estado:" />
+				<p:selectOneMenu filter="true" value="#{cidadeBean.cidade.estado}">
+					<f:selectItem itemValue="" itemLabel="Selecione um estado" />
 				</p:selectOneMenu>
-			</h:panelGrid>   
+			</h:panelGrid>
+
 			<h:panelGrid columns="2">
-				<p:commandButton value="Salvar"></p:commandButton>
-				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();"></p:commandButton>
+				<p:commandButton value="Salvar" />
+				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();" />
 			</h:panelGrid>
 		</h:form>
 	</p:dialog>

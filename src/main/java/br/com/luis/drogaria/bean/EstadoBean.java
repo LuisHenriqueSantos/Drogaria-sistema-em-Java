@@ -10,7 +10,6 @@ import javax.faces.event.ActionEvent;
 import javax.management.RuntimeErrorException;
 
 import org.omnifaces.util.Messages;
-import org.primefaces.component.message.Message;
 
 import br.com.luis.drogaria.dao.EstadoDAO;
 import br.com.luis.drogaria.domain.Estado;
