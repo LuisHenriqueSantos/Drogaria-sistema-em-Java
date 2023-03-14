@@ -19,6 +19,7 @@ import br.com.luis.drogaria.domain.Estado;
 @ViewScoped
 public class CidadeBean implements Serializable {
 	private Cidade cidade;
+	private Estado estado;
 	private List<Cidade> cidades;
 	private List<Estado> estados;
 
@@ -73,15 +74,18 @@ public class CidadeBean implements Serializable {
 	public void salvar() {
 		try {
 			CidadeDAO cidadeDAO = new CidadeDAO();
-			cidadeDAO.salvar(cidade);
+			cidadeDAO.merge(cidade);
 
-			novo();
+			cidade = new Cidade();
+
+			EstadoDAO estadoDAO = new EstadoDAO();
+			estados = estadoDAO.listar();
+
 			cidades = cidadeDAO.listar();
 
-			org.omnifaces.util.Messages.addGlobalInfo("Estado salvo com sucesso");
-
+			Messages.addGlobalInfo("Cidade salva com sucesso");
 		} catch (RuntimeException erro) {
-			Messages.addGlobalInfo("Ocorrreu um erro ao salvar o estado!");
+			Messages.addGlobalInfo("Ocorrreu um erro ao salvar a cidade!");
 			erro.printStackTrace();
 		}
 	}
