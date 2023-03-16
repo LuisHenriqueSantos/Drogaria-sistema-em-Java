@@ -26,19 +26,23 @@
 					</p:commandButton>
 				</f:facet>
 
-				<p:column headerText="Descrição" filterBy="#{produto.descricao}" sortBy="#{produto.descricao}" >
+				<p:column headerText="Descrição" filterBy="#{produto.descricao}"
+					sortBy="#{produto.descricao}">
 					<h:outputText value="#{produto.descricao}" />
 				</p:column>
 
-				<p:column headerText="Quantidade" filterBy="#{produto.quantidade}" sortBy="#{produto.quantidade}">
+				<p:column headerText="Quantidade" filterBy="#{produto.quantidade}"
+					sortBy="#{produto.quantidade}">
 					<h:outputText value="#{produto.quantidade}" />
 				</p:column>
 
-				<p:column headerText="Preço" filterBy="#{produto.preco}" sortBy="#{produto.preco}">
+				<p:column headerText="Preço" filterBy="#{produto.preco}"
+					sortBy="#{produto.preco}">
 					<h:outputText value="#{produto.preco}" />
 				</p:column>
 
-				<p:column headerText="Fabricante" filterBy="#{produto.fabricante}" sortBy="#{produto.fabricante}">
+				<p:column headerText="Fabricante" filterBy="#{produto.fabricante}"
+					sortBy="#{produto.fabricante}">
 					<h:outputText value="#{produto.fabricante.descricao}" />
 				</p:column>
 
@@ -78,19 +82,24 @@
 				<p:outputLabel value="Descrição:" />
 				<p:inputText maxlength="50" size="30"
 					value="#{produtoBean.produto.descricao}" required="true"
-					requiredMessage="O campo 'Descrição' é obrigatório" />
+					requiredMessage="Atenção! Campo (descrição) obrigatório" />
 
 				<p:outputLabel value="Quantidade:" />
 				<p:inputText maxlength="5" size="10"
 					value="#{produtoBean.produto.quantidade}" required="true"
 					requiredMessage="O campo 'Quantidade' é obrigatório"
-					converterMessage="Informe um valor válido para o campo 'Quantidade'" />
+					converterMessage="Valor incorreto no campo (quantidade)"
+					validatorMessage="Atenção! Necessário informar uma quantidade de 0 a 1000.">
+					<f:validateLongRange minimum="0" maximum="1000" />
+				</p:inputText>
 
 				<p:outputLabel value="Preço:" />
 				<p:inputText maxlength="7" size="10"
-					value="#{produtoBean.produto.preco}" required="true" 
+					value="#{produtoBean.produto.preco}" required="true"
 					requiredMessage="O campo 'Preço' é obrigatório"
-					converterMessage="Informe um valor válido para o campo 'Preço''" />
+					converterMessage="Valor incorreto no campo (preço)" validatorMessage="Atenção! campo não pode ter valor negativo. Necessário informar um valor entre '0.01 a 9999.99'">
+					<f:validateDoubleRange minimum="0.01" maximum="9999.99" />
+				</p:inputText>
 
 				<p:outputLabel value="Fabricante:" />
 				<p:selectOneMenu filter="true"
