@@ -78,24 +78,40 @@
 		draggable="false" resizable="false" modal="true" closable="false">
 		<h:form id="formCadastro">
 			<h:panelGrid id="painel" columns="2">
-				<p:outputLabel for="descricao" value="Descrição:" />
-				<p:inputText id="descricao" maxlength="50" size="30"
+				<p:outputLabel for="nome" value="Nome:" />
+				<p:inputText id="nome" maxlength="50" size="30"
 					value="#{pessoaBean.pessoa.nome}" required="true"
 					requiredMessage="O campo 'Nome' é obrigatório" />
 
 				<p:outputLabel for="rg" value="RG:" />
-				<p:inputText id="rg" />
+				<p:inputText id="rg" value="#{pessoaBean.pessoa.rg}" required="true"
+					requiredMessage="O campo 'RG' é obrigatório" />
 
 				<p:outputLabel for="cpf" value="CPF:" />
-				<p:inputText id="cpf" />
+				<p:inputText id="cpf" value="#{pessoaBean.pessoa.cpf}"
+					required="true" requiredMessage="O campo 'CPF' é obrigatório" />
 
-				<p:outputLabel value="Estado:" />
-				<p:selectOneMenu>
+				<p:outputLabel for="estado" value="Estado:" />
+				<p:selectOneMenu id="estado" filter="true"
+					converter="omnifaces.SelectItemsConverter" required="true"
+					requiredMessage="O campo 'estado' é obrigatório!">
+					<f:selectItem noSelectionOption="true"
+						itemLabel="Selecione um estado:" />
+					<f:selectItems value="#{pessoaBean.estados}" var="estado"
+						itemValue="#{estado}" itemLabel="#{estado.sigla}" />
 				</p:selectOneMenu>
 
-				<p:outputLabel value="Cidade:" />
-				<p:selectOneMenu>
+				<p:outputLabel for="cidade" value="Cidade:" />
+				<p:selectOneMenu id="cidade" filter="true"
+					value="#{pessoaBean.cidade.nome}"
+					converter="omnifaces.SelectItemsConverter" required="true"
+					requiredMessage="O campo 'cidade' é obregatório!">
+					<f:selectItem noSelectionOption="true"
+						itemLabel="Selecione uma caidade:" />
+					<f:selectItems value="#{pessoaBean.cidades}" var="cidade"
+						itemValue="#{cidade}" itemLabel="#{cidade.nome}" />
 				</p:selectOneMenu>
+
 
 				<p:outputLabel for="rua" value="Rua:" />
 				<p:inputText id="rua" maxlength="100" size="50"
@@ -117,11 +133,11 @@
 					requiredMessage="O campo 'Bairro' é obrigatório" />
 
 				<p:outputLabel for="cep" value="CEP:" />
-				<p:inputText id="cep" />
+				<p:inputText id="cep" value="#{pessoaBean.pessoa.cep}"
+					required="true" requiredMessage="O campo 'CPE' é obrigatório!" />
 
 				<p:outputLabel for="complemento" value="Complemento:" />
-				<p:inputText id="complemento" maxlength="10" size="10"
-					value="#{pessoaBean.pessoa.complemento}" />
+				<p:inputText id="complemento" maxlength="10" size="10" />
 
 				<p:outputLabel for="telefone" value="Telefone:" />
 				<p:inputText id="telefone" />
