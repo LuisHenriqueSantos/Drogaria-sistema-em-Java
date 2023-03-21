@@ -130,7 +130,7 @@ public class CidadeDAOTest {
 	
 	
 	@Test
-	//@Ignore
+	@Ignore
 	public void buscarPorEstado() {
 		@SuppressWarnings("unused")
 		Long estadoCodigo = 1L;	
