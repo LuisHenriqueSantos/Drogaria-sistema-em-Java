@@ -67,7 +67,6 @@
 			<artifactId>omnifaces</artifactId>
 			<version>1.11</version>
 		</dependency>
-		
 		<!-- Configuração para ser carregado a fabrica de sessão junto com Tomcat-->
 		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 		<dependency>
@@ -75,6 +74,13 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
 			<scope>provided</scope>
+		</dependency>
+		
+		<!-- Validade para e-mail-->
+		<dependency>
+			<groupId>commons-validator</groupId>
+			<artifactId>commons-validator</artifactId>
+			<version>1.7</version>
 		</dependency>
 	</dependencies>
 </project>

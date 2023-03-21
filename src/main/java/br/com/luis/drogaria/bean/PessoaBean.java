@@ -11,7 +11,6 @@ import javax.faces.event.ActionEvent;
 
 import org.omnifaces.util.Messages;
 
-import br.com.luis.drogaria.dao.CidadeDAO;
 import br.com.luis.drogaria.dao.EstadoDAO;
 import br.com.luis.drogaria.dao.PessoaDAO;
 import br.com.luis.drogaria.domain.Cidade;
@@ -94,10 +93,10 @@ public class PessoaBean implements Serializable {
 	public void novo() {
 		try {
 			pessoa = new Pessoa();
-			
+
 			EstadoDAO estadoDAO = new EstadoDAO();
-			estados = estadoDAO.listar();
-			
+			estados = estadoDAO.listar("nome");
+
 			cidades = new ArrayList<Cidade>();
 		} catch (RuntimeException erro) {
 			Messages.addGlobalError("Ocorreu um erro ao gerar uma nova pessoa!");
