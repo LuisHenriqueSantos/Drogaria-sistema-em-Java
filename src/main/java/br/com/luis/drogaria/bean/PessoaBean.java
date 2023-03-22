@@ -95,12 +95,15 @@ public class PessoaBean implements Serializable {
 		try {
 			pessoa = new Pessoa();
 
+			estado = new Estado();
+
 			EstadoDAO estadoDAO = new EstadoDAO();
 			estados = estadoDAO.listar("nome");
 
-			cidades = new ArrayList<Cidade>();
+			cidades = new ArrayList<>();
 		} catch (RuntimeException erro) {
-			Messages.addGlobalError("Ocorreu um erro ao gerar uma nova pessoa!");
+			Messages.addGlobalError("Ocorreu um erro ao tentar gerar uma nova pessoa");
+			erro.printStackTrace();
 		}
 
 	}
@@ -110,21 +113,50 @@ public class PessoaBean implements Serializable {
 	}
 
 	public void salvar() {
+		try {
+			PessoaDAO pessoaDAO = new PessoaDAO();
+			pessoaDAO.merge(pessoa);
 
+			pessoas = pessoaDAO.listar("nome");
+
+			pessoa = new Pessoa();
+
+			estado = new Estado();
+
+			EstadoDAO estadoDAO = new EstadoDAO();
+			estados = estadoDAO.listar("nome");
+
+			cidades = new ArrayList<>();
+		} catch (RuntimeException erro) {
+			Messages.addGlobalError("Ocorreu um erro ao tentar salvar a pessoa");
+			erro.printStackTrace();
+		}
 	}
 
 	public void excluir(ActionEvent evento) {
+		try {
+			PessoaDAO pessoaDAO = new PessoaDAO();
+			pessoaDAO.excluir(pessoa);
+			
+			Messages.addGlobalInfo("Pessoa excluida com sucesso");
+		} catch (RuntimeException erro) {
+			Messages.addGlobalError("Ocorreu um erro ao excluir a pessoa");
+			erro.printStackTrace();
+		}
 
 	}
 
 	public void popular() {
 		try {
 			if (estado != null) {
-				CidadeDAO cidadeDAO = new CidadeDAO(); 
+				CidadeDAO cidadeDAO = new CidadeDAO();
 				cidades = cidadeDAO.buscarPorEstado(estado.getCodigo());
+			} else {
+				cidades = new ArrayList<>();
 			}
 		} catch (RuntimeException erro) {
-			Messages.addGlobalError("Ocorreu um erro ao filtrar as cidades!");
+			Messages.addGlobalError("Ocorreu um erro ao tentar filtrar as cidades");
+			erro.printStackTrace();
 		}
 	}
 }

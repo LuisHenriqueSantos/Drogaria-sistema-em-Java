@@ -105,16 +105,15 @@
 				</p:selectOneMenu>
 
 				<p:outputLabel for="cidade" value="Cidade:" />
-				<p:selectOneMenu id="cidade" filter="true"
-					value="#{pessoaBean.cidade.nome}"
-					converter="omnifaces.SelectItemsConverter" required="true"
-					requiredMessage="O campo 'cidade' é obregatório!">
+				<p:selectOneMenu id="cidade" filter="true" required="true"
+					requiredMessage="O campo 'Cidade' é obrigatório"
+					converter="omnifaces.SelectItemsConverter"
+					value="#{pessoaBean.pessoa.cidade}">
 					<f:selectItem noSelectionOption="true"
-						itemLabel="Selecione uma caidade:" />
+						itemLabel="Selecione uma cidade" />
 					<f:selectItems value="#{pessoaBean.cidades}" var="cidade"
 						itemValue="#{cidade}" itemLabel="#{cidade.nome}" />
 				</p:selectOneMenu>
-
 
 				<p:outputLabel for="rua" value="Rua:" />
 				<p:inputText id="rua" maxlength="100" size="50"
@@ -141,7 +140,8 @@
 					requiredMessage="O campo 'CPE' é obrigatório!" />
 
 				<p:outputLabel for="complemento" value="Complemento:" />
-				<p:inputText id="complemento" maxlength="10" size="10" />
+				<p:inputText id="complemento" maxlength="10" size="10" 
+				value="#{pessoaBean.pessoa.complemento}"/>
 
 				<p:outputLabel for="telefone" value="Telefone:" />
 				<p:inputMask id="telefone" mask="9999-9999" size="6"
