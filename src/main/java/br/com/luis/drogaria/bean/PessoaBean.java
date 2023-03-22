@@ -13,12 +13,14 @@ import org.omnifaces.util.Messages;
 
 import br.com.luis.drogaria.dao.CidadeDAO;
 import br.com.luis.drogaria.dao.EstadoDAO;
+import br.com.luis.drogaria.dao.FabricanteDAO;
 import br.com.luis.drogaria.dao.PessoaDAO;
 import br.com.luis.drogaria.domain.Cidade;
 import br.com.luis.drogaria.domain.Estado;
 import br.com.luis.drogaria.domain.Pessoa;
+import br.com.luis.drogaria.domain.Produtos;
 
-@SuppressWarnings("serial")
+@SuppressWarnings({ "serial", "unused" })
 @ManagedBean
 @ViewScoped
 
@@ -108,10 +110,6 @@ public class PessoaBean implements Serializable {
 
 	}
 
-	public void editar(ActionEvent evento) {
-
-	}
-
 	public void salvar() {
 		try {
 			PessoaDAO pessoaDAO = new PessoaDAO();
@@ -133,11 +131,27 @@ public class PessoaBean implements Serializable {
 		}
 	}
 
+	public void editar(ActionEvent evento){
+		try {
+			pessoa = (Pessoa) evento.getComponent().getAttributes().get("pessoaSelecionada");
+
+			PessoaDAO pessoaDAO = new PessoaDAO();
+			pessoas = pessoaDAO.listar();
+			
+			Messages.addGlobalInfo("Pessoa editada com sucesso");
+		} catch (RuntimeException erro) {
+			Messages.addFlashGlobalError("Ocorreu um erro ao tentar selecionar um produto");
+			erro.printStackTrace();
+		}	
+	}
+
 	public void excluir(ActionEvent evento) {
 		try {
+			pessoa = (Pessoa) evento.getComponent().getAttributes().get("pessoaSelecionada");
+			
 			PessoaDAO pessoaDAO = new PessoaDAO();
 			pessoaDAO.excluir(pessoa);
-			
+
 			Messages.addGlobalInfo("Pessoa excluida com sucesso");
 		} catch (RuntimeException erro) {
 			Messages.addGlobalError("Ocorreu um erro ao excluir a pessoa");
