@@ -14,11 +14,6 @@ import org.omnifaces.util.Messages;
 import br.com.luis.drogaria.dao.EstadoDAO;
 import br.com.luis.drogaria.domain.Estado;
 
-/**
- * 
- * @author ljesus
- *
- */
 
 @SuppressWarnings({ "unused", "serial" })
 @ManagedBean
