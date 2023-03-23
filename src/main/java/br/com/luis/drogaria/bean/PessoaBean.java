@@ -8,6 +8,7 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.ActionEvent;
+import javax.management.RuntimeErrorException;
 
 import org.omnifaces.util.Messages;
 
@@ -118,39 +119,46 @@ public class PessoaBean implements Serializable {
 			pessoas = pessoaDAO.listar("nome");
 
 			pessoa = new Pessoa();
-
 			estado = new Estado();
 
 			EstadoDAO estadoDAO = new EstadoDAO();
 			estados = estadoDAO.listar("nome");
 
 			cidades = new ArrayList<>();
+			Messages.addGlobalInfo("Salvar com sucesso");
 		} catch (RuntimeException erro) {
 			Messages.addGlobalError("Ocorreu um erro ao tentar salvar a pessoa");
 			erro.printStackTrace();
 		}
 	}
 
-	public void editar(ActionEvent evento){
+	public void editar(ActionEvent evento) {
 		try {
 			pessoa = (Pessoa) evento.getComponent().getAttributes().get("pessoaSelecionada");
 
 			PessoaDAO pessoaDAO = new PessoaDAO();
 			pessoas = pessoaDAO.listar();
-			
-			Messages.addGlobalInfo("Pessoa editada com sucesso");
+
+			CidadeDAO cidadeDAO = new CidadeDAO();
+			cidades = cidadeDAO.listar();
+
+			EstadoDAO estadoDAO = new EstadoDAO();
+			estados = estadoDAO.listar("nome");
+
+			estado = pessoa.getCidade().getEstado();
 		} catch (RuntimeException erro) {
-			Messages.addFlashGlobalError("Ocorreu um erro ao tentar selecionar um produto");
+			Messages.addFlashGlobalError("Ocorreu um erro ao selecionar uma pessoa");
 			erro.printStackTrace();
-		}	
+		}
 	}
 
 	public void excluir(ActionEvent evento) {
 		try {
 			pessoa = (Pessoa) evento.getComponent().getAttributes().get("pessoaSelecionada");
-			
 			PessoaDAO pessoaDAO = new PessoaDAO();
 			pessoaDAO.excluir(pessoa);
+
+			pessoas = pessoaDAO.listar();
 
 			Messages.addGlobalInfo("Pessoa excluida com sucesso");
 		} catch (RuntimeException erro) {

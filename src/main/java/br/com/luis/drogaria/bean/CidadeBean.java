@@ -100,7 +100,6 @@ public class CidadeBean implements Serializable {
 			cidades = cidadeDAO.listar();
 
 			Messages.addGlobalInfo("Cidade removida com sucesso!");
-
 		} catch (RuntimeErrorException erro) {
 			Messages.addGlobalInfo("Ocorrreu um erro ao remover a cidade!");
 			erro.printStackTrace();
