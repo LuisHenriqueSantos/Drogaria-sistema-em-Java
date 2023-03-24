@@ -35,18 +35,19 @@
 					sortBy="#{cliente.pessoa.cpf}">
 					<h:outputText value="#{cliente.pessoa.cpf}" />
 				</p:column>
-				
+
 
 				<p:column headerText="Data Cadastro"
-					filterBy="#{cliente.dataCadastro}" sortBy="#{cliente.dataCadastro}"> 
-					<h:outputText value="#{cliente.dataCadastro}" >
-						<f:convertDateTime locale="PT_BR"/> 
+					filterBy="#{cliente.dataCadastro}" sortBy="#{cliente.dataCadastro}">
+					<h:outputText value="#{cliente.dataCadastro}">
+						<f:convertDateTime locale="PT_BR" />
 					</h:outputText>
 				</p:column>
 
 				<p:column headerText="Liberado" filterBy="#{cliente.liberado}"
 					sortBy="#{cliente}">
-					<p:selectBooleanCheckbox value="#{cliente.liberado}" disabled="true"/>
+					<p:selectBooleanCheckbox value="#{cliente.liberado}"
+						disabled="true" />
 				</p:column>
 
 				<p:column headerText="Opções">

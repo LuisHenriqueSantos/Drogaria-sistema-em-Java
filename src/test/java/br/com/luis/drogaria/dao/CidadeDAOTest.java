@@ -5,10 +5,10 @@ import java.util.List;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import br.com.luis.drogaria.domain.Cidade;
+import br.com.luis.drogaria.domain.;
 import br.com.luis.drogaria.domain.Estado;
 
-public class CidadeDAOTest {
+public class DAOTest {
 	@Test
 	@Ignore
 	public void salvar() {
@@ -16,7 +16,7 @@ public class CidadeDAOTest {
 
 		Estado estado = estadoDAO.buscar(1L);
 
-		Cidade cidade = new Cidade();
+		 cidade = new Cidade();
 		cidade.setNome("Marília");
 		cidade.setEstado(estado);
 

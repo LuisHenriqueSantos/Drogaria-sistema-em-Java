@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00cb2549-fb7c-43cc-9c00-f1a2b9437cc0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.component" beforeDir="false" afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.component" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/luis/drogaria/dao/CidadeDAOTeste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/luis/drogaria/dao/CidadeDAOTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/luis/drogaria/dao/EstadaoDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/luis/drogaria/dao/EstadaoDAOTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/luis/drogaria/dao/CidadeDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/luis/drogaria/dao/CidadeDAOTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/br.com.luis.drogaria/Drogaria/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/br.com.luis.drogaria/Drogaria/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,11 +17,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -46,11 +41,6 @@
       <MavenGeneralSettings>
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
-    </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
     </option>
   </component>
   <component name="ProjectId" id="2MLNBKiidYk6cekK5Q61cCmU4BH" />
@@ -75,21 +65,6 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="Drogaria" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Drogaria" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -102,6 +77,8 @@
       <workItem from="1677542967415" duration="645000" />
       <workItem from="1677552155700" duration="375000" />
       <workItem from="1677860137907" duration="833000" />
+      <workItem from="1679626944457" duration="1855000" />
+      <workItem from="1679659696902" duration="1014000" />
     </task>
     <servers />
   </component>
