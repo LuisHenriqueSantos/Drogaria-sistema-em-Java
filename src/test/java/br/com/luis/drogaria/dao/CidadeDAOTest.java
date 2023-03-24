@@ -5,18 +5,20 @@ import java.util.List;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import br.com.luis.drogaria.domain.;
+import br.com.luis.drogaria.domain.Cidade;
 import br.com.luis.drogaria.domain.Estado;
 
-public class DAOTest {
+public class CidadeDAOTest {
 	@Test
 	@Ignore
 	public void salvar() {
+		Long codigoEstado = 1L;
+
 		EstadoDAO estadoDAO = new EstadoDAO();
 
-		Estado estado = estadoDAO.buscar(1L);
+		Estado estado = estadoDAO.buscar(codigoEstado);
 
-		 cidade = new Cidade();
+		Cidade cidade = new Cidade();
 		cidade.setNome("Marília");
 		cidade.setEstado(estado);
 
@@ -94,32 +96,32 @@ public class DAOTest {
 	@Test
 	@Ignore
 
-	public void editar(){
+	public void editar() {
 		Long codigoCidade = 4L;
 		Long codigoEstado = 4L;
-		
+
 		EstadoDAO estadoDAO = new EstadoDAO();
 		Estado estado = estadoDAO.buscar(codigoEstado);
-		
+
 		System.out.println("Código do Estado: " + estado.getCodigo());
 		System.out.println("Sigla do Estado: " + estado.getSigla());
 		System.out.println("Nome do Estado: " + estado.getNome());
-		
+
 		CidadeDAO cidadeDAO = new CidadeDAO();
 		Cidade cidade = cidadeDAO.buscar(codigoCidade);
-		
+
 		System.out.println("Cidade A Ser Editada");
 		System.out.println("Código da Cidade: " + cidade.getCodigo());
 		System.out.println("Nome da Cidade: " + cidade.getNome());
 		System.out.println("Código do Estado: " + cidade.getEstado().getCodigo());
 		System.out.println("Sigla do Estado: " + cidade.getEstado().getSigla());
 		System.out.println("Nome do Estado: " + cidade.getEstado().getNome());
-		
+
 		cidade.setNome("Guarapuava");
 		cidade.setEstado(estado);
-		
+
 		cidadeDAO.editar(cidade);
-		
+
 		System.out.println("Cidade Editada");
 		System.out.println("Código da Cidade: " + cidade.getCodigo());
 		System.out.println("Nome da Cidade: " + cidade.getNome());
@@ -127,14 +129,13 @@ public class DAOTest {
 		System.out.println("Sigla do Estado: " + cidade.getEstado().getSigla());
 		System.out.println("Nome do Estado: " + cidade.getEstado().getNome());
 	}
-	
-	
+
 	@Test
 	@Ignore
 	public void buscarPorEstado() {
 		@SuppressWarnings("unused")
-		Long estadoCodigo = 1L;	
-		
+		Long estadoCodigo = 1L;
+
 		CidadeDAO cidadeDAO = new CidadeDAO();
 		List<Cidade> resultado = cidadeDAO.buscarPorEstado(estadoCodigo);
 
@@ -149,5 +150,4 @@ public class DAOTest {
 
 	}
 
-	
 }

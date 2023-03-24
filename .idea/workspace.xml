@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="00cb2549-fb7c-43cc-9c00-f1a2b9437cc0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/luis/drogaria/dao/CidadeDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/luis/drogaria/dao/CidadeDAOTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/br.com.luis.drogaria/Drogaria/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/br.com.luis.drogaria/Drogaria/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/ClienteBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/ClienteBean.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +41,9 @@
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2MLNBKiidYk6cekK5Q61cCmU4BH" />
   <component name="ProjectViewState">
@@ -78,7 +80,7 @@
       <workItem from="1677552155700" duration="375000" />
       <workItem from="1677860137907" duration="833000" />
       <workItem from="1679626944457" duration="1855000" />
-      <workItem from="1679659696902" duration="1014000" />
+      <workItem from="1679659696902" duration="1843000" />
     </task>
     <servers />
   </component>
