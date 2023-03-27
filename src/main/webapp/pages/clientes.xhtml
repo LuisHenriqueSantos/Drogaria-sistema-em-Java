@@ -23,6 +23,8 @@
 					<p:commandButton value="Novo" actionListener="#{clienteBean.novo}"
 						oncomplete="PF('dialogo').show();"
 						update=":mensagem :formCadastro:painel">
+						<f:actionListener
+							type="org.omnifaces.eventlistener.ResetInputAjaxActionListener" />
 					</p:commandButton>
 				</f:facet>
 
@@ -88,12 +90,13 @@
 			<h:panelGrid id="painel" columns="2">
 				<p:outputLabel for="pessoa" value="Pessoa" />
 				<p:selectOneMenu id="pessoa" filter="true"
-					value="#{clienteBean.cliente}" required="true"
-					requiredMessage="Campo 'Pessoa' obrigatório">
+					value="#{clienteBean.clientes.pessoa}" required="true"
+					requiredMessage="O campo 'Pessoa' é obrigatório"
+					converter="omnifaces.SelectItemsConverter">
 					<f:selectItem noSelectionOption="true"
 						itemLabel="Selecione uma pessoa" />
 					<f:selectItems value="#{clienteBean.pessoas}" var="pessoa"
-						itemValue="pessoa" itemLabel="#{pessoa.nome} - #{pessoa.cpf} " />
+						itemValue="#{pessoa}" itemLabel="#{pessoa.nome} - #{pessoa.cpf}" />
 				</p:selectOneMenu>
 
 				<p:outputLabel for="dataCadastro" value="Data Cadastro" />
@@ -108,7 +111,7 @@
 			</h:panelGrid>
 			<h:panelGrid columns="2">
 				<p:commandButton value="Salvar"
-					actionListener="#{clienteBean.salvar()}"
+					action="#{clienteBean.salvar()}"
 					update=":mensagem :formCadastro:painel :formlista:tabela:" />
 				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();" />
 			</h:panelGrid>

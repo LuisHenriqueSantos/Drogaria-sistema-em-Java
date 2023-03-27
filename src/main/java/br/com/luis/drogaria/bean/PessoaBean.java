@@ -167,6 +167,20 @@ public class PessoaBean implements Serializable {
 		}
 
 	}
+	
+	public void popular() {
+		try {
+			if (estado != null) {
+				CidadeDAO cidadeDAO = new CidadeDAO();
+				cidades = cidadeDAO.buscarPorEstado(estado.getCodigo());
+			} else {
+				cidades = new ArrayList<>();
+			}
+		} catch (RuntimeException erro) {
+			Messages.addGlobalError("Ocorreu um erro ao tentar filtrar as cidades");
+			erro.printStackTrace();
+		}
+	}
 
 //	private void Email() {
 //		Email e = new Email();

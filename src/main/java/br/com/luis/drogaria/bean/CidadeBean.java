@@ -1,6 +1,7 @@
 package br.com.luis.drogaria.bean;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -115,6 +116,20 @@ public class CidadeBean implements Serializable {
 			estados = estadoDAO.listar();
 		} catch (RuntimeException erro) {
 			Messages.addFlashGlobalError("Ocorreu um erro ao tentar selecionar uma cidade");
+			erro.printStackTrace();
+		}
+	}
+	
+	public void popular() {
+		try {
+			if (estado != null) {
+				CidadeDAO cidadeDAO = new CidadeDAO();
+				cidades = cidadeDAO.buscarPorEstado(estado.getCodigo());
+			} else {
+				cidades = new ArrayList<>();
+			}
+		} catch (RuntimeException erro) {
+			Messages.addGlobalError("Ocorreu um erro ao tentar filtrar as cidades");
 			erro.printStackTrace();
 		}
 	}

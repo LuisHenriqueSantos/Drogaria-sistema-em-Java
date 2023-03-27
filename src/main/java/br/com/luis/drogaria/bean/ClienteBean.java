@@ -11,9 +11,7 @@ import javax.faces.event.ActionEvent;
 import org.omnifaces.util.Messages;
 
 import br.com.luis.drogaria.dao.ClienteDAO;
-import br.com.luis.drogaria.dao.EstadoDAO;
 import br.com.luis.drogaria.dao.PessoaDAO;
-import br.com.luis.drogaria.domain.Cidade;
 import br.com.luis.drogaria.domain.Clientes;
 import br.com.luis.drogaria.domain.Pessoa;
 
@@ -67,7 +65,6 @@ public class ClienteBean implements Serializable {
 
 			PessoaDAO pessoaDAO = new PessoaDAO();
 			pessoas = pessoaDAO.listar("nome");
-
 		} catch (RuntimeException erro) {
 			Messages.addGlobalInfo("Ocorrreu um erro ao salvar o cliente!");
 			erro.printStackTrace();
@@ -77,21 +74,25 @@ public class ClienteBean implements Serializable {
 	public void salvar() {
 		try {
 			ClienteDAO clienteDAO = new ClienteDAO();
-			cliente = clienteDAO.listar("pessoa");
+			clienteDAO.merge(clientes);
 
-			novo();
-			cliente = clienteDAO.listar("nome");
+			clientes = new Clientes();
 
-			org.omnifaces.util.Messages.addGlobalInfo("Cliente salvo com sucesso");
+			cliente = clienteDAO.listar("dataCadastro");
+
+			PessoaDAO pessoaDAO = new PessoaDAO();
+			pessoas = pessoaDAO.listar("nome");
+
+			Messages.addGlobalInfo("Cliente salvo com sucesso");
 		} catch (RuntimeException erro) {
-			Messages.addGlobalInfo("Ocorrreu um erro ao salvar o cliente!");
+			Messages.addGlobalError("Ocorreu um erro ao tentar salvar o cliente");
 			erro.printStackTrace();
 		}
 	}
 
 	public void editar(ActionEvent evento) {
 		try {
-			clientes = (Clientes) evento.getComponent().getAttributes().get("cidadeSelecionada");
+			clientes = (Clientes) evento.getComponent().getAttributes().get("clienteSelecionado");
 
 			PessoaDAO pessoaDAO = new PessoaDAO();
 			pessoas = pessoaDAO.listar();
@@ -103,13 +104,13 @@ public class ClienteBean implements Serializable {
 
 	}
 
-	public void excluir() {
+	public void excluir(ActionEvent evento) {
 		try {
+			clientes = (Clientes) evento.getComponent().getAttributes().get("clienteSelecionado");
 			ClienteDAO clienteDAO = new ClienteDAO();
-			cliente = clienteDAO.listar("pessoa");
+			clienteDAO.excluir(clientes);
 
-			novo();
-			cliente = clienteDAO.listar("nome");
+			cliente = clienteDAO.listar("pessoa");
 
 			org.omnifaces.util.Messages.addGlobalInfo("Cliente excluido com sucesso");
 		} catch (RuntimeException erro) {
