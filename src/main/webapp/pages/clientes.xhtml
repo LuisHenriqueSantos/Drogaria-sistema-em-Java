@@ -10,6 +10,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Clientes</title>
 </h:head>
+<h:outputScript library="js" name="scripts.js" />
 <h:body>
 	<p:growl id="mensagem" />
 
@@ -95,9 +96,11 @@
 						itemValue="pessoa" itemLabel="#{pessoa.nome} - #{pessoa.cpf} " />
 				</p:selectOneMenu>
 
-				<p:outputLabel value="Data Cadastro" />
-				<p:calendar value="#{clienteBean.clientes.dataCadastro}" locale="de"
-					navigator="true" pattern="yyyy-MMM-dd" />
+				<p:outputLabel for="dataCadastro" value="Data Cadastro" />
+				<p:calendar id="dataCadastro"
+					value="#{clienteBean.clientes.dataCadastro}" required="true"
+					requiredMessage="Data cadastro obrigatório" size="10"
+					locale="pt_BR" />
 
 				<p:outputLabel value="Liberado" />
 				<p:selectBooleanCheckbox value="#{clienteBean.clientes.liberado}" />

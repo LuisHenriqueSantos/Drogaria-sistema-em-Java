@@ -6,11 +6,14 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.event.ActionEvent;
 
 import org.omnifaces.util.Messages;
 
 import br.com.luis.drogaria.dao.ClienteDAO;
+import br.com.luis.drogaria.dao.EstadoDAO;
 import br.com.luis.drogaria.dao.PessoaDAO;
+import br.com.luis.drogaria.domain.Cidade;
 import br.com.luis.drogaria.domain.Clientes;
 import br.com.luis.drogaria.domain.Pessoa;
 
@@ -81,16 +84,38 @@ public class ClienteBean implements Serializable {
 
 			org.omnifaces.util.Messages.addGlobalInfo("Cliente salvo com sucesso");
 		} catch (RuntimeException erro) {
-			Messages.addGlobalInfo("Ocorrreu um erro ao salvar a cidade!");
+			Messages.addGlobalInfo("Ocorrreu um erro ao salvar o cliente!");
 			erro.printStackTrace();
 		}
 	}
 
-	public void editar() {
+	public void editar(ActionEvent evento) {
+		try {
+			clientes = (Clientes) evento.getComponent().getAttributes().get("cidadeSelecionada");
+
+			PessoaDAO pessoaDAO = new PessoaDAO();
+			pessoas = pessoaDAO.listar();
+
+		} catch (RuntimeException erro) {
+			Messages.addGlobalInfo("Ocorrreu um erro ao editar o cliente!");
+			erro.printStackTrace();
+		}
 
 	}
 
 	public void excluir() {
+		try {
+			ClienteDAO clienteDAO = new ClienteDAO();
+			cliente = clienteDAO.listar("pessoa");
+
+			novo();
+			cliente = clienteDAO.listar("nome");
+
+			org.omnifaces.util.Messages.addGlobalInfo("Cliente excluido com sucesso");
+		} catch (RuntimeException erro) {
+			Messages.addGlobalInfo("Ocorrreu um erro ao excluir o cliente!");
+			erro.printStackTrace();
+		}
 
 	}
 
