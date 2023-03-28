@@ -63,25 +63,24 @@ public class UsuarioBean implements Serializable {
 		try {
 			UsuarioDAO usuarioDAO = new UsuarioDAO();
 
-			usuarios = usuarioDAO.listar("pessoa");
+			usuarios = usuarioDAO.listar("tipo");
 		} catch (RuntimeException erro) {
 			org.omnifaces.util.Messages.addGlobalInfo("Ocorrreu um erro ao exibir a listagem dos usuários!");
 			erro.printStackTrace();
 		}
 	}
 
-	public void novo() {
-		try {
-			usuario = new Usuario();
-
-			PessoaDAO pessoaDAO = new PessoaDAO();
-			pessoas = pessoaDAO.listar();
-		} catch (RuntimeException errro) {
-			org.omnifaces.util.Messages.addGlobalInfo("Ocorrreu um erro!");
-			errro.printStackTrace();
-		}
-
-	}
+//	public void novo() {
+//		try {
+//			usuario = new Usuario();
+//
+//			PessoaDAO pessoaDAO = new PessoaDAO();
+//			pessoas = pessoaDAO.listar();
+//		} catch (RuntimeException errro) {
+//			org.omnifaces.util.Messages.addGlobalInfo("Ocorrreu um erro!");
+//			errro.printStackTrace();
+//		}
+//	}
 
 	public void salvar() {
 		try {
