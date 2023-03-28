@@ -6,13 +6,12 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.event.ActionEvent;
 
 import org.omnifaces.util.Messages;
 
-import br.com.luis.drogaria.dao.EstadoDAO;
 import br.com.luis.drogaria.dao.PessoaDAO;
 import br.com.luis.drogaria.dao.UsuarioDAO;
-import br.com.luis.drogaria.domain.Cidade;
 import br.com.luis.drogaria.domain.Pessoa;
 import br.com.luis.drogaria.domain.Usuario;
 
@@ -101,12 +100,33 @@ public class UsuarioBean implements Serializable {
 
 	}
 
-	public void editar() {
+	public void editar(ActionEvent evento) {
+		try {
+			usuario = (Usuario) evento.getComponent().getAttributes().get("usuarioSelecionado");
+
+			PessoaDAO pessoaDAO = new PessoaDAO();
+			pessoas = pessoaDAO.listar();
+
+		} catch (RuntimeException erro) {
+			Messages.addFlashGlobalError("Ocorreu um erro ao selecionar um usuario");
+			erro.printStackTrace();
+		}
 
 	}
 
-	public void excluir() {
+	public void excluir(ActionEvent evento) {
+		try {
+			usuario = (Usuario) evento.getComponent().getAttributes().get("usuarioSelecionado");
+			UsuarioDAO usuarioDAO = new UsuarioDAO();
+			usuarioDAO.excluir(usuario);
 
+			usuarios = usuarioDAO.listar();
+
+			Messages.addGlobalInfo("Usuario excluido com Sucesso");
+
+		} catch (RuntimeException erro) {
+			Messages.addGlobalError("Erro ao Excluir Usuario");
+			erro.printStackTrace();
+		}
 	}
-
 }

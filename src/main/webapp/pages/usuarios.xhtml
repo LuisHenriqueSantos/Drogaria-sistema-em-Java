@@ -35,15 +35,31 @@
 					<h:outputText value="#{usuario.pessoa.cpf}" />
 				</p:column>
 
-				<p:column headerText="Tipo" sortBy="#{usuario.tipoFormatado}">
+				<p:column headerText="Tipo" filterBy="#{usuario.tipoFormatado}" sortBy="#{usuario.tipoFormatado}">
 					<h:outputText value="#{usuario.tipoFormatado}" />
 				</p:column>
 
-				<p:column headerText="Ativo" sortBy="#{usuario.ativoFormatado}">
+				<p:column headerText="Ativo" filterBy="#{usuario.ativoFormatado}" sortBy="#{usuario.ativoFormatado}">
 					<h:outputText value="#{usuario.ativoFormatado}" />
 				</p:column>
 
 				<p:column headerText="Opções">
+					<p:commandButton icon="ui-icon-trash"
+						actionListener="#{usuarioBean.excluir()}"
+						update=":mensagem :formListagem:tabela">
+						<p:confirm header="Confirmação"
+							message="Deseja excluir o usuario?" icon="ui-icon-alert" />
+						<f:attribute name="usuarioSelecionado" value="#{usuario}" />
+					</p:commandButton>
+
+					<p:commandButton icon="ui-icon-pencil"
+						actionListener="#{usuarioBean.editar}"
+						update=":mensagem :formCadastro:painel"
+						oncomplete="PF('dialogo').show();">
+						<f:attribute name="usuarioSelecionado" value="#{usuario}" />
+						<f:actionListener
+							type="org.omnifaces.eventlistener.ResetInputAjaxActionListener" />
+					</p:commandButton>
 				</p:column>
 			</p:dataTable>
 		</p:panel>

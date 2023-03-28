@@ -75,12 +75,16 @@
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
-		
 		<!-- Validade para e-mail-->
 		<dependency>
 			<groupId>commons-validator</groupId>
 			<artifactId>commons-validator</artifactId>
 			<version>1.7</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.enterprise</groupId>
+			<artifactId>cdi-api</artifactId>
+			<version>1.2</version>
 		</dependency>
 	</dependencies>
 </project>
