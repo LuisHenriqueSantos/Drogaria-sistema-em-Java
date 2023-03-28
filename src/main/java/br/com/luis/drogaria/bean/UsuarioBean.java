@@ -70,17 +70,17 @@ public class UsuarioBean implements Serializable {
 		}
 	}
 
-//	public void novo() {
-//		try {
-//			usuario = new Usuario();
-//
-//			PessoaDAO pessoaDAO = new PessoaDAO();
-//			pessoas = pessoaDAO.listar();
-//		} catch (RuntimeException errro) {
-//			org.omnifaces.util.Messages.addGlobalInfo("Ocorrreu um erro!");
-//			errro.printStackTrace();
-//		}
-//	}
+	public void novo() {
+		try {
+			usuario = new Usuario();
+
+			PessoaDAO pessoaDAO = new PessoaDAO();
+			pessoas = pessoaDAO.listar("nome");
+		} catch (RuntimeException errro) {
+			org.omnifaces.util.Messages.addGlobalInfo("Ocorrreu um erro!");
+			errro.printStackTrace();
+		}
+	}
 
 	public void salvar() {
 		try {
@@ -88,11 +88,10 @@ public class UsuarioBean implements Serializable {
 			usuarioDAO.merge(usuario);
 
 			usuario = new Usuario();
-
 			usuarios = usuarioDAO.listar();
 
 			PessoaDAO pessoaDAO = new PessoaDAO();
-			pessoas = pessoaDAO.listar();
+			pessoas = pessoaDAO.listar("nome");
 
 			usuarios = usuarioDAO.listar();
 			Messages.addGlobalInfo("Usuário salvo com sucesso");
