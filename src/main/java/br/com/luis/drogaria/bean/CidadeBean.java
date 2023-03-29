@@ -11,7 +11,6 @@ import javax.faces.event.ActionEvent;
 import javax.management.RuntimeErrorException;
 
 import org.omnifaces.util.Messages;
-
 import br.com.luis.drogaria.dao.CidadeDAO;
 import br.com.luis.drogaria.dao.EstadoDAO;
 import br.com.luis.drogaria.domain.Cidade;
@@ -119,7 +118,7 @@ public class CidadeBean implements Serializable {
 			erro.printStackTrace();
 		}
 	}
-	
+
 	public void popular() {
 		try {
 			if (estado != null) {

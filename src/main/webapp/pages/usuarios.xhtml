@@ -43,12 +43,12 @@
 					<h:outputText value="#{usuario.ativoFormatado}" />
 				</p:column>
 
-				<p:column headerText="Opções">
+				<p:column headerText="#{msg.headerText}">
 					<p:commandButton icon="ui-icon-trash"
-						actionListener="#{usuarioBean.excluir()}"
-						update=":mensagem :formListagem:tabela">
-						<p:confirm header="Confirmação"
-							message="Deseja excluir o usuario?" icon="ui-icon-alert" />
+						actionListener="#{usuarioBean.excluir}"
+						update=":mensagem :formListagem:tabela" >
+						<p:confirm header="Confirmação" message="Deseja excluir esse usuário?"
+							icon="ui-icon-alert" />
 						<f:attribute name="usuarioSelecionado" value="#{usuario}" />
 					</p:commandButton>
 
