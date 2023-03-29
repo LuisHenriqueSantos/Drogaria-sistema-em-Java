@@ -13,6 +13,12 @@
 		<param-value>Development</param-value>
 	</context-param>
 
+	<!-- Theme the PrimeFaces -->
+	<context-param>
+		<param-name>primefaces.THEME</param-name>
+		<param-value>blitzer</param-value>
+	</context-param>
+
 	<!-- Configuração do Java Server Faces (JSF) -->
 	<servlet>
 		<servlet-name>Faces Servlet</servlet-name>
