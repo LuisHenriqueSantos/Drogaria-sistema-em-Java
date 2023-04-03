@@ -1,29 +1,30 @@
 package br.com.luis.drogaria.bean;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.ActionEvent;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.WebTarget;
 
 import org.omnifaces.util.Messages;
 
+import com.google.gson.Gson;
+
 import br.com.luis.drogaria.dao.FabricanteDAO;
-import br.com.luis.drogaria.dao.ProdutoDAO;
 import br.com.luis.drogaria.domain.Fabricante;
-import br.com.luis.drogaria.domain.Produtos;
 
 @SuppressWarnings("serial")
-@ViewScoped
 @ManagedBean
+@ViewScoped
 public class FabricanteBean implements Serializable {
 	private Fabricante fabricante;
-	private Produtos produtos;
-
 	private List<Fabricante> fabricantes;
-	private List<Produtos> produto;
 
 	public Fabricante getFabricante() {
 		return fabricante;
@@ -41,46 +42,28 @@ public class FabricanteBean implements Serializable {
 		this.fabricantes = fabricantes;
 	}
 
-	public Produtos getProdutos() {
-		return produtos;
-	}
-
-	public void setProdutos(Produtos produtos) {
-		this.produtos = produtos;
-	}
-
-	public List<Produtos> getProduto() {
-		return produto;
-	}
-
-	public void setProduto(List<Produtos> produto) {
-		this.produto = produto;
-	}
-
 	@PostConstruct
 	public void listar() {
 		try {
-			FabricanteDAO fabricanteDAO = new FabricanteDAO();
-			fabricantes = fabricanteDAO.listar();
-
-		} catch (RuntimeException errro) {
-			org.omnifaces.util.Messages.addGlobalInfo("Ocorrreu um erro ao exbir a listagem dos fabricantes!");
-			errro.printStackTrace();
+			//FabricanteDAO fabricanteDAO = new FabricanteDAO();
+			//fabricantes = fabricanteDAO.listar();
+			
+			Client cliente = ClientBuilder.newClient();
+			WebTarget caminho = cliente.target("http://127.0.0.1:8080/Drogaria/rest/fabricante");
+			String json = caminho.request().get(String.class);
+			
+			Gson gson = new Gson();
+			Fabricante[] vetor = gson.fromJson(json, Fabricante[].class);
+			
+			fabricantes = Arrays.asList(vetor);
+ 		} catch (RuntimeException erro) {
+			Messages.addGlobalError("Ocorreu um erro ao tentar listar os fabricantes");
+			erro.printStackTrace();
 		}
-
 	}
 
 	public void novo() {
-		try {
-			fabricante = new Fabricante();
-
-			ProdutoDAO produtoDAO = new ProdutoDAO();
-			produto = produtoDAO.listar("descricao");
-		} catch (RuntimeException errro) {
-			org.omnifaces.util.Messages.addGlobalInfo("Ocorrreu um erro ao incluir um novo fabricante!");
-			errro.printStackTrace();
-		}
-
+		fabricante = new Fabricante();
 	}
 
 	public void salvar() {
@@ -89,46 +72,32 @@ public class FabricanteBean implements Serializable {
 			fabricanteDAO.merge(fabricante);
 
 			fabricante = new Fabricante();
+			fabricantes = fabricanteDAO.listar();
 
-			ProdutoDAO produtoDAO = new ProdutoDAO();
-			produto = produtoDAO.listar();
-
-			fabricantes = fabricanteDAO.listar(null);
-
-			Messages.addGlobalInfo("Fabricante salvo com sucesso!");
-		} catch (RuntimeException errro) {
-			org.omnifaces.util.Messages.addGlobalInfo("Ocorrreu um erro ao incluir um novo fabricante!");
-			errro.printStackTrace();
-		}
-
-	}
-
-	public void editar(ActionEvent evento) {
-		try {
-			fabricante = (Fabricante) evento.getComponent().getAttributes().get("fabricanteSelecionado");
-
-			ProdutoDAO produtoDAO = new ProdutoDAO();
-			produto = produtoDAO.listar();
-
-		} catch (RuntimeException errro) {
-			org.omnifaces.util.Messages.addGlobalInfo("Ocorrreu um erro ao editar o fabricante!");
-			errro.printStackTrace();
+			Messages.addGlobalInfo("Fabricante salvo com sucesso");
+		} catch (RuntimeException erro) {
+			Messages.addGlobalError("Ocorreu um erro ao tentar salvar o fabricante");
+			erro.printStackTrace();
 		}
 	}
 
 	public void excluir(ActionEvent evento) {
 		try {
 			fabricante = (Fabricante) evento.getComponent().getAttributes().get("fabricanteSelecionado");
+
 			FabricanteDAO fabricanteDAO = new FabricanteDAO();
 			fabricanteDAO.excluir(fabricante);
 
 			fabricantes = fabricanteDAO.listar();
 
-			Messages.addGlobalInfo("Fabricante excluido com sucesso!");
-		} catch (RuntimeException errro) {
-			org.omnifaces.util.Messages.addGlobalInfo("Ocorrreu um erro ao excluir o fabricante!");
-			errro.printStackTrace();
+			Messages.addGlobalInfo("Fabricante removido com sucesso");
+		} catch (RuntimeException erro) {
+			Messages.addFlashGlobalError("Ocorreu um erro ao tentar remover o fabricante");
+			erro.printStackTrace();
 		}
 	}
 
+	public void editar(ActionEvent evento) {
+		fabricante = (Fabricante) evento.getComponent().getAttributes().get("fabricanteSelecionado");
+	}
 }

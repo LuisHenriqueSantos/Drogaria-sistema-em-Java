@@ -32,8 +32,8 @@
 					<h:outputText value="#{fabricante.descricao}" />
 				</p:column>
 
-				<p:column headerText="Código" filterBy="fabricante.codigo"
-					sortBy="fabricante.codigo">
+				<p:column headerText="Código" filterBy="#{fabricante.codigo}"
+					sortBy="#{fabricante.codigo}">
 					<h:outputText value="#{fabricante.codigo}" />
 				</p:column>
 
@@ -72,8 +72,8 @@
 			<h:panelGrid id="painel" columns="2">
 				<p:outputLabel for="nome" value="Nome" />
 				<p:inputText id="nome" maxlength="50" size="30"
-					value="#{fabricanteBean.produtos.codigo}" required="true"
-					requiredMessage="Atenção! Nome do produto é obrigatório?" />
+					value="#{fabricanteBean.fabricante.descricao}" required="true"
+					requiredMessage="Atenção! Nome do fabricante é obrigatório?" />
 			</h:panelGrid>
 			<h:panelGrid columns="2">
 				<p:commandButton value="Salvar" action="#{fabricanteBean.salvar}"
