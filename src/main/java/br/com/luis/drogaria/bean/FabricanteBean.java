@@ -10,13 +10,13 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.event.ActionEvent;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 
 import org.omnifaces.util.Messages;
 
 import com.google.gson.Gson;
 
-import br.com.luis.drogaria.dao.FabricanteDAO;
 import br.com.luis.drogaria.domain.Fabricante;
 
 @SuppressWarnings("serial")
@@ -45,18 +45,18 @@ public class FabricanteBean implements Serializable {
 	@PostConstruct
 	public void listar() {
 		try {
-			//FabricanteDAO fabricanteDAO = new FabricanteDAO();
-			//fabricantes = fabricanteDAO.listar();
-			
+			// FabricanteDAO fabricanteDAO = new FabricanteDAO();
+			// fabricantes = fabricanteDAO.listar();
+
 			Client cliente = ClientBuilder.newClient();
 			WebTarget caminho = cliente.target("http://127.0.0.1:8080/Drogaria/rest/fabricante");
 			String json = caminho.request().get(String.class);
-			
+
 			Gson gson = new Gson();
 			Fabricante[] vetor = gson.fromJson(json, Fabricante[].class);
-			
+
 			fabricantes = Arrays.asList(vetor);
- 		} catch (RuntimeException erro) {
+		} catch (RuntimeException erro) {
 			Messages.addGlobalError("Ocorreu um erro ao tentar listar os fabricantes");
 			erro.printStackTrace();
 		}
@@ -68,11 +68,26 @@ public class FabricanteBean implements Serializable {
 
 	public void salvar() {
 		try {
-			FabricanteDAO fabricanteDAO = new FabricanteDAO();
-			fabricanteDAO.merge(fabricante);
+			// Não precisa mais usar essa 4 linhas, estamos trabalhando com a chamada do
+			// serviço.
+//			FabricanteDAO fabricanteDAO = new FabricanteDAO();
+//			fabricanteDAO.merge(fabricante);
+//
+//			fabricante = new Fabricante();
+//			fabricantes = fabricanteDAO.listar();
+
+			Client cliente = ClientBuilder.newClient();
+			WebTarget caminho = cliente.target("http://127.0.0.1:8080/Drogaria/rest/fabricante");
+
+			Gson gson = new Gson();
+			String json = gson.toJson(fabricante);
+			caminho.request().post(Entity.json(json));
 
 			fabricante = new Fabricante();
-			fabricantes = fabricanteDAO.listar();
+
+			json = caminho.request().get(String.class);
+			Fabricante[] vetor = gson.fromJson(json, Fabricante[].class);
+			fabricantes = Arrays.asList(vetor);
 
 			Messages.addGlobalInfo("Fabricante salvo com sucesso");
 		} catch (RuntimeException erro) {
@@ -83,16 +98,31 @@ public class FabricanteBean implements Serializable {
 
 	public void excluir(ActionEvent evento) {
 		try {
+			// Não precisa mais usar essa 4 linhas, estamos trabalhando com a chamada do
+			// serviço.
+//			fabricante = (Fabricante) evento.getComponent().getAttributes().get("fabricanteSelecionado");
+//			FabricanteDAO fabricanteDAO = new FabricanteDAO();
+//			fabricanteDAO.excluir(fabricante);
+//			fabricantes = fabricanteDAO.listar();
+
 			fabricante = (Fabricante) evento.getComponent().getAttributes().get("fabricanteSelecionado");
 
-			FabricanteDAO fabricanteDAO = new FabricanteDAO();
-			fabricanteDAO.excluir(fabricante);
+			Client cliente = ClientBuilder.newClient();
+			WebTarget caminho = cliente.target("http://192.168.0.114:8080/Drogaria/rest/fabricante");
+			WebTarget caminhoExcluir = caminho.path("{codigo}").resolveTemplate("codigo", fabricante.getCodigo());
 
-			fabricantes = fabricanteDAO.listar();
+			caminhoExcluir.request().delete();
+			String json = caminho.request().get(String.class);
 
-			Messages.addGlobalInfo("Fabricante removido com sucesso");
+			Gson gson = new Gson();
+			Fabricante[] vetor = gson.fromJson(json, Fabricante[].class);
+
+			fabricantes = Arrays.asList(vetor);
+
+			Messages.addGlobalInfo("Fabricante excluido com sucesso");
+			Messages.addGlobalInfo("Fabricante: " + fabricante.getDescricao());
 		} catch (RuntimeException erro) {
-			Messages.addFlashGlobalError("Ocorreu um erro ao tentar remover o fabricante");
+			Messages.addGlobalError("Ocorreu um erro ao tentar excluir um fabricante");
 			erro.printStackTrace();
 		}
 	}
