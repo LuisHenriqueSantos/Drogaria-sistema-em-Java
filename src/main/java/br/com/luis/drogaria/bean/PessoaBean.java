@@ -181,37 +181,4 @@ public class PessoaBean implements Serializable {
 			erro.printStackTrace();
 		}
 	}
-
-//	private void Email() {
-//		Email e = new Email();
-//
-//		// Verifica se o Email e valido.
-//		boolean b = e.validarEmail();
-//		if (!b)
-//			System.out.println("Email Inválido");
-//		else
-//			System.out.println("Email Válido");
-//
-//		// Imprime o que esta antes do @.
-//		String nome = e.obterNome();
-//		System.out.println(nome);
-//
-//	}
-
-//	public static void main(String[] args) {
-//
-//		Email e = new Email();
-//
-//		// Verifica se o Email e valido.
-//		boolean b = e.validarEmail();
-//		if (!b)
-//			System.out.println("Email Inválido");
-//		else
-//			System.out.println("Email Válido");
-//
-//		// Imprime o que esta antes do @.
-//		String nome = e.obterNome();
-//		System.out.println(nome);
-//
-//	}
 }

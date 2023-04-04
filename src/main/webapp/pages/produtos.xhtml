@@ -79,15 +79,15 @@
 
 	<p:dialog header="Produtos - Cadastro" widgetVar="dialogo"
 		draggable="false" resizable="false" modal="true" closable="false">
-		<h:form id="formCadastro">
+		<h:form id="formCadastro" enctype="multipart/form-data">
 			<h:panelGrid id="painel" columns="2">
-				<p:outputLabel value="Descrição:" />
-				<p:inputText maxlength="50" size="30"
+				<p:outputLabel for="descricao" value="Descrição:" />
+				<p:inputText id="descricao" maxlength="50" size="30"
 					value="#{produtoBean.produto.descricao}" required="true"
 					requiredMessage="Atenção! Campo (descrição) obrigatório" />
 
-				<p:outputLabel value="Quantidade:" />
-				<p:inputText maxlength="5" size="10"
+				<p:outputLabel for="quantidade" value="Quantidade:" />
+				<p:inputText id="quantidade" maxlength="5" size="10"
 					value="#{produtoBean.produto.quantidade}" required="true"
 					requiredMessage="O campo 'Quantidade' é obrigatório"
 					converterMessage="Valor incorreto no campo (quantidade)"
@@ -95,8 +95,8 @@
 					<f:validateLongRange minimum="0" maximum="1000" />
 				</p:inputText>
 
-				<p:outputLabel value="Preço:" />
-				<p:inputText maxlength="7" size="10"
+				<p:outputLabel for="preco" value="Preço:" />
+				<p:inputText id="preco" maxlength="7" size="10"
 					value="#{produtoBean.produto.preco}" required="true"
 					requiredMessage="O campo 'Preço' é obrigatório"
 					converterMessage="Valor incorreto no campo (preço)"
@@ -105,17 +105,19 @@
 					<f:convertNumber locale="pt_BR" minFractionDigits="2" />
 				</p:inputText>
 
-				<p:outputLabel value="Fabricante:" />
-				<p:selectOneMenu filter="true"
+				<p:outputLabel for="fabricante" value="Fabricante:" />
+				<p:selectOneMenu id="fabricante" filter="true"
 					value="#{produtoBean.produto.fabricante}"
 					converter="omnifaces.SelectItemsConverter" required="true"
 					requiredMessage="O campo 'Fabricante' é obrigatório">
 					<f:selectItem noSelectionOption="true"
 						itemLabel="Selecione um fabricante" />
-					<f:selectItems value="#{produtoBean.fabricantes}" var="fabricante"
+					<f:selectItems  value="#{produtoBean.fabricantes}" var="fabricante"
 						itemValue="#{fabricante}" itemLabel="#{fabricante.descricao}" />
 				</p:selectOneMenu>
 
+				<p:outputLabel for="foto" value="Foto:" />
+				<p:fileUpload id="foto" mode="advanced" fileUploadListener="#{produtoBean.uploadFotos}" update=":mensagem" auto="true" />
 			</h:panelGrid>
 
 			<h:panelGrid columns="2">

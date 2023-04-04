@@ -19,6 +19,12 @@
 		<param-value>blitzer</param-value>
 	</context-param>
 
+	<!-- Definição do mecanismo do upload -->
+	<context-param>
+		<param-name>primefaces.UPLOADER</param-name>
+		<param-value>native</param-value>
+	</context-param>
+
 	<!-- Configuração do Java Server Faces (JSF) -->
 	<servlet>
 		<servlet-name>Faces Servlet</servlet-name>
