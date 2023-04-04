@@ -108,11 +108,13 @@ public class FabricanteBean implements Serializable {
 			fabricante = (Fabricante) evento.getComponent().getAttributes().get("fabricanteSelecionado");
 
 			Client cliente = ClientBuilder.newClient();
-			WebTarget caminho = cliente.target("http://192.168.0.114:8080/Drogaria/rest/fabricante");
+			WebTarget caminho = cliente.target("http://127.0.0.1:8080/Drogaria/rest/fabricante");
 			WebTarget caminhoExcluir = caminho.path("{codigo}").resolveTemplate("codigo", fabricante.getCodigo());
 
 			caminhoExcluir.request().delete();
 			String json = caminho.request().get(String.class);
+
+			fabricante = new Fabricante();
 
 			Gson gson = new Gson();
 			Fabricante[] vetor = gson.fromJson(json, Fabricante[].class);
@@ -120,14 +122,13 @@ public class FabricanteBean implements Serializable {
 			fabricantes = Arrays.asList(vetor);
 
 			Messages.addGlobalInfo("Fabricante excluido com sucesso");
-			Messages.addGlobalInfo("Fabricante: " + fabricante.getDescricao());
 		} catch (RuntimeException erro) {
-			Messages.addGlobalError("Ocorreu um erro ao tentar excluir um fabricante");
+			Messages.addGlobalError("Produto vinculado ao fabricante, impossível excluir!");
 			erro.printStackTrace();
 		}
 	}
 
-	public void editar(ActionEvent evento) {
-		fabricante = (Fabricante) evento.getComponent().getAttributes().get("fabricanteSelecionado");
+		public void editar (ActionEvent evento){
+			fabricante = (Fabricante) evento.getComponent().getAttributes().get("fabricanteSelecionado");
+		}
 	}
-}
