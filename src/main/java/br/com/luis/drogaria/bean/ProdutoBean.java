@@ -29,118 +29,127 @@ import org.primefaces.model.UploadedFile;
 @ViewScoped
 
 public class ProdutoBean implements Serializable {
-	private Produtos  produto;
-	private List<Produtos> produtos;
-	private List<Fabricante> fabricantes;
-	
-	public Produtos getProduto() {
-		return produto;
-	}
+    private Produtos produto;
+    private List<Produtos> produtos;
+    private List<Fabricante> fabricantes;
 
-	public void setProduto(Produtos produto) {
-		this.produto = produto;
-	}
+    public Produtos getProduto() {
+        return produto;
+    }
 
-	public List<Produtos> getProdutos() {
-		return produtos;
-	}
+    public void setProduto(Produtos produto) {
+        this.produto = produto;
+    }
 
-	public void setProdutos(List<Produtos> produtos) {
-		this.produtos = produtos;
-	}
+    public List<Produtos> getProdutos() {
+        return produtos;
+    }
 
-	public List<Fabricante> getFabricantes() {
-		return fabricantes;
-	}
+    public void setProdutos(List<Produtos> produtos) {
+        this.produtos = produtos;
+    }
 
-	public void setFabricantes(List<Fabricante> fabricantes) {
-		this.fabricantes = fabricantes;
-	}
+    public List<Fabricante> getFabricantes() {
+        return fabricantes;
+    }
 
-	@PostConstruct
-	public void listar() {
-		try {
-			ProdutoDAO produtoDAO = new ProdutoDAO();
-			produtos = produtoDAO.listar();
-		} catch (RuntimeException erro) {
-			Messages.addGlobalError("Ocorreu um erro ao tentar listar os produtos");
-			erro.printStackTrace();
-		}
-	}
-	
-	public void novo() {
-		try {
-			produto = new Produtos();
+    public void setFabricantes(List<Fabricante> fabricantes) {
+        this.fabricantes = fabricantes;
+    }
 
-			FabricanteDAO fabricanteDAO = new FabricanteDAO();
-			fabricantes = fabricanteDAO.listar("descricao");
-		} catch (RuntimeException erro) {
-			Messages.addFlashGlobalError("Ocorreu um erro ao tentar gerar um novo produto");
-			erro.printStackTrace();
-		}
-	}
-	
-	public void editar(ActionEvent evento){
-		try {
-			produto = (Produtos) evento.getComponent().getAttributes().get("produtoSelecionado");
+    @PostConstruct
+    public void listar() {
+        try {
+            ProdutoDAO produtoDAO = new ProdutoDAO();
+            produtos = produtoDAO.listar();
+        } catch (RuntimeException erro) {
+            Messages.addGlobalError("Ocorreu um erro ao tentar listar os produtos");
+            erro.printStackTrace();
+        }
+    }
 
-			FabricanteDAO fabricanteDAO = new FabricanteDAO();
-			fabricantes = fabricanteDAO.listar();
-		} catch (RuntimeException erro) {
-			Messages.addFlashGlobalError("Ocorreu um erro ao tentar selecionar um produto");
-			erro.printStackTrace();
-		}	
-	}
-	
-	public void salvar() {
-		try {
-			ProdutoDAO produtoDAO = new ProdutoDAO();
-			Produtos produtoRetorno = produtoDAO.merge(produto);
+    public void novo() {
+        try {
+            produto = new Produtos();
 
-			Path origem = Paths.get(produto.getCaminho());
-			Path destino = Paths.get("C://EclipseJDK8//Uploads//img" + produtoRetorno.getCodigo() + ".jpg");
-			Files.copy(origem, destino, StandardCopyOption.REPLACE_EXISTING);
+            FabricanteDAO fabricanteDAO = new FabricanteDAO();
+            fabricantes = fabricanteDAO.listar("descricao");
+        } catch (RuntimeException erro) {
+            Messages.addFlashGlobalError("Ocorreu um erro ao tentar gerar um novo produto");
+            erro.printStackTrace();
+        }
+    }
 
-			produto = new Produtos();
+    public void editar(ActionEvent evento) {
+        try {
+            produto = (Produtos) evento.getComponent().getAttributes().get("produtoSelecionado");
+            produto.setCaminho("C:/EclipseJDK/workspace/upload/img_produtos/" +produto.getCodigo() + ".png");
 
-			FabricanteDAO fabricanteDAO = new FabricanteDAO();
-			fabricantes = fabricanteDAO.listar();
+            FabricanteDAO fabricanteDAO = new FabricanteDAO();
+            fabricantes = fabricanteDAO.listar();
+        } catch (RuntimeException erro) {
+            Messages.addFlashGlobalError("Ocorreu um erro ao tentar selecionar um produto");
+            erro.printStackTrace();
+        }
+    }
 
-			produtos = produtoDAO.listar();
+    public void salvar() {
+        try {
+            if (produto.getCaminho() == null) {
+                Messages.addGlobalError("Campo foto é obrigatório!");
+                return;
+            };
 
-			Messages.addGlobalInfo("Produto salvo com sucesso");
-		} catch (RuntimeException | IOException erro) {
-			Messages.addFlashGlobalError("Ocorreu um erro ao tentar salvar o produto");
-			erro.printStackTrace();
-		}
-	}
+            ProdutoDAO produtoDAO = new ProdutoDAO();
+            Produtos produtoRetorno = produtoDAO.merge(produto);
 
-	public void excluir(ActionEvent evento) {
-		try {
-			produto = (Produtos) evento.getComponent().getAttributes().get("produtoSelecionado");
+            Path origem = Paths.get(produto.getCaminho());
+            Path destino = Paths.get("C:/EclipseJDK/workspace/upload/img_produtos/" + produtoRetorno.getCodigo() + ".png");
+            Files.copy(origem, destino, StandardCopyOption.REPLACE_EXISTING);
 
-			ProdutoDAO produtoDAO = new ProdutoDAO();
-			produtoDAO.excluir(produto);
+            produto = new Produtos();
 
-			produtos = produtoDAO.listar();
+            FabricanteDAO fabricanteDAO = new FabricanteDAO();
+            fabricantes = fabricanteDAO.listar();
 
-			Messages.addGlobalInfo("Produto removido com sucesso");
-		} catch (RuntimeException erro) {
-			Messages.addFlashGlobalError("Ocorreu um erro ao tentar remover o produto");
-			erro.printStackTrace();
-		}
-	}
+            produtos = produtoDAO.listar();
 
-	public void uploadFotos(FileUploadEvent evento){
-		try {
-			UploadedFile arquivoUpload = evento.getFile();
-			Path arquivoTemporario = Files.createTempFile(null, null);
-			Files.copy(arquivoUpload.getInputstream(), arquivoTemporario, StandardCopyOption.REPLACE_EXISTING);
-			produto.setCaminho(arquivoTemporario.toString());
-			Messages.addGlobalInfo(produto.getCaminho());
-		}catch (IOException erro) {
-			Messages.addGlobalInfo("Erro ao fazer o upload da imagem!");
-			erro.printStackTrace();
-		}
-	}
+            Messages.addGlobalInfo("Produto salvo com sucesso");
+        } catch (RuntimeException | IOException erro) {
+            Messages.addFlashGlobalError("Ocorreu um erro ao tentar salvar o produto");
+            erro.printStackTrace();
+        }
+    }
+
+    public void excluir(ActionEvent evento) {
+        try {
+            produto = (Produtos) evento.getComponent().getAttributes().get("produtoSelecionado");
+
+            ProdutoDAO produtoDAO = new ProdutoDAO();
+            produtoDAO.excluir(produto);
+
+            Path arquivo = Paths.get("C:/EclipseJDK/workspace/upload/img_produtos/" + produto.getCodigo() + ".png");
+            Files.deleteIfExists(arquivo);
+
+            produtos = produtoDAO.listar();
+
+            Messages.addGlobalInfo("Produto removido com sucesso");
+        } catch (RuntimeException | IOException erro) {
+            Messages.addFlashGlobalError("Ocorreu um erro ao tentar remover o produto");
+            erro.printStackTrace();
+        }
+    }
+
+    public void uploadFotos(FileUploadEvent evento) {
+        try {
+            UploadedFile arquivoUpload = evento.getFile();
+            Path arquivoTemporario = Files.createTempFile(null, null);
+            Files.copy(arquivoUpload.getInputstream(), arquivoTemporario, StandardCopyOption.REPLACE_EXISTING);
+            produto.setCaminho(arquivoTemporario.toString());
+            Messages.addGlobalInfo(produto.getCaminho());
+        } catch (IOException erro) {
+            Messages.addGlobalInfo("Erro ao fazer o upload da imagem!");
+            erro.printStackTrace();
+        }
+    }
 }
