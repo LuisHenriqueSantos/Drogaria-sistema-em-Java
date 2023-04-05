@@ -10,28 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00cb2549-fb7c-43cc-9c00-f1a2b9437cc0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/VendaBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/historico.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/vendas.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/principal.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/PessoaBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/PessoaBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/ProdutoBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/ProdutoBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/dao/ClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/dao/ClienteDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/WEB-INF/classes/br/com/luis/drogaria/bean/PessoaBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/WEB-INF/classes/br/com/luis/drogaria/bean/PessoaBean.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/WEB-INF/classes/br/com/luis/drogaria/bean/ProdutoBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/WEB-INF/classes/br/com/luis/drogaria/bean/ProdutoBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/pages/pessoas.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/pages/pessoas.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/bean/ClienteBean.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/bean/PessoaBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/bean/PessoaBean.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/bean/ProdutoBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/bean/ProdutoBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/dao/ClienteDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/br.com.luis.drogaria/Drogaria/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/br.com.luis.drogaria/Drogaria/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
