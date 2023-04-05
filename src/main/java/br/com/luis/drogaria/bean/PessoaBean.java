@@ -8,18 +8,17 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.ActionEvent;
-import javax.management.RuntimeErrorException;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
 
 import org.omnifaces.util.Messages;
 
 import br.com.luis.drogaria.dao.CidadeDAO;
 import br.com.luis.drogaria.dao.EstadoDAO;
-import br.com.luis.drogaria.dao.FabricanteDAO;
 import br.com.luis.drogaria.dao.PessoaDAO;
 import br.com.luis.drogaria.domain.Cidade;
 import br.com.luis.drogaria.domain.Estado;
 import br.com.luis.drogaria.domain.Pessoa;
-import br.com.luis.drogaria.domain.Produtos;
 
 @SuppressWarnings({ "serial", "unused" })
 @ManagedBean
@@ -167,7 +166,7 @@ public class PessoaBean implements Serializable {
 		}
 
 	}
-	
+
 	public void popular() {
 		try {
 			if (estado != null) {
@@ -181,4 +180,20 @@ public class PessoaBean implements Serializable {
 			erro.printStackTrace();
 		}
 	}
+<<<<<<< Updated upstream
 }
+=======
+
+	public static boolean EmailValidador(String email) {
+		boolean result = true;
+		try {
+			InternetAddress emailAddr = new InternetAddress(email);
+			emailAddr.validate();
+		} catch (AddressException ex) {
+			result = false;
+		}
+		return result;
+	}
+
+}
+>>>>>>> Stashed changes
