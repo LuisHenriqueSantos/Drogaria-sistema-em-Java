@@ -11,13 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="00cb2549-fb7c-43cc-9c00-f1a2b9437cc0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/PessoaBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/PessoaBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/ProdutoBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/ProdutoBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/WEB-INF/classes/br/com/luis/drogaria/bean/PessoaBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/WEB-INF/classes/br/com/luis/drogaria/bean/PessoaBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/WEB-INF/classes/br/com/luis/drogaria/bean/ProdutoBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/WEB-INF/classes/br/com/luis/drogaria/bean/ProdutoBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/bean/PessoaBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/bean/PessoaBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/bean/ProdutoBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/bean/ProdutoBean.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +97,7 @@
     "dart.analysis.tool.window.visible": "false",
     "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Projetos/Java",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -125,18 +120,6 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="TomeeConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
-      <deployment />
-      <server-settings />
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Drogaria" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.87" ALTERNATIVE_JRE_ENABLED="false">
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -230,17 +213,36 @@
         </option>
       </method>
     </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
-      <deployment />
-      <server-settings />
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration default="true" type="aws.lambda" factoryName="Local">
+      <option name="credentialProviderId" />
+      <option name="regionId" />
+      <option name="debugHost" value="localhost" />
+      <option name="architecture" />
+      <option name="environmentVariables">
+        <map />
+      </option>
+      <option name="handler" />
+      <option name="image" value="false" />
+      <option name="logicalFunctionName" />
+      <option name="memorySize" value="128" />
+      <option name="pathMappings">
+        <list />
+      </option>
+      <option name="platform" />
+      <option name="runtime" />
+      <option name="templateFile" />
+      <option name="timeout" value="300" />
+      <option name="useTemplate" value="false" />
+      <option name="input" />
+      <option name="inputIsFile" value="false" />
+      <sam>
+        <option name="additionalBuildArgs" />
+        <option name="additionalLocalArgs" />
+        <option name="buildInContainer" value="false" />
+        <option name="dockerNetwork" />
+        <option name="skipImagePull" value="false" />
+      </sam>
+      <method v="2" />
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -265,6 +267,8 @@
       <workItem from="1680694651771" duration="1679000" />
       <workItem from="1680647524096" duration="125000" />
       <workItem from="1680647679691" duration="1147000" />
+      <workItem from="1680735461088" duration="56000" />
+      <workItem from="1680740273147" duration="291000" />
     </task>
     <servers />
   </component>
