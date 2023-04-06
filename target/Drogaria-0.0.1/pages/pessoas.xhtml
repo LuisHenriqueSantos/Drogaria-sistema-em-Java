@@ -58,8 +58,8 @@
 						actionListener="#{pessoaBean.editar}"
 						update=":mensagem :formCadastro:painel"
 						oncomplete="PF('dialogo').show();">
-						<p:confirm header="Confirmação" message="Deseja editar essa pessoa?" 
-							icon="ui-icon-alert" />
+						<p:confirm header="Confirmação"
+							message="Deseja editar essa pessoa?" icon="ui-icon-alert" />
 						<f:attribute name="pessoaSelecionada" value="#{pessoa}" />
 						<f:actionListener
 							type="org.omnifaces.eventlistener.ResetInputAjaxActionListener" />
@@ -160,12 +160,20 @@
 					value="#{pessoaBean.pessoa.email}" required="true"
 					requiredMessage="O campo 'Email' é obrigatório" />
 
+				<h:outputText value="@" for="email" />
+				<p:inputText id="email" value="#{pessoaBean.pessoa.email}"
+					requiredMessage="Digite um E-mail válido"
+					validatorMessage="Email inválido. EX:joao@gmail.com">
+					<p:ajax event="blur" update="validaEmaill"
+						listener="#{usuario.validaEmail()}" />  // validação via ajax
+	</p:inputText>
+
 			</h:panelGrid>
 
 			<h:panelGrid columns="2">
 				<p:commandButton value="Salvar"
 					actionListener="#{pessoaBean.salvar}"
-					update=":mensagem :formCadastro:painel :formListagem:tabela"  />
+					update=":mensagem :formCadastro:painel :formListagem:tabela" />
 				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();" />
 			</h:panelGrid>
 		</h:form>

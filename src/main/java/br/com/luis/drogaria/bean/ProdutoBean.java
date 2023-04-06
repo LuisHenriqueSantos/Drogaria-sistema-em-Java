@@ -83,7 +83,7 @@ public class ProdutoBean implements Serializable {
     public void editar(ActionEvent evento) {
         try {
             produto = (Produtos) evento.getComponent().getAttributes().get("produtoSelecionado");
-            produto.setCaminho("C:/EclipseJDK/workspace/upload/img_produtos" +produto.getCodigo() + ".png");
+            produto.setCaminho("C:/EclipseJDK/workspace/upload/img_produtos/" + produto.getCodigo() + ".png");
 
             FabricanteDAO fabricanteDAO = new FabricanteDAO();
             fabricantes = fabricanteDAO.listar();
@@ -95,7 +95,7 @@ public class ProdutoBean implements Serializable {
 
     public void salvar() {
         try {
-            if(produto.getCaminho() == null){
+            if (produto.getCaminho() == null) {
                 Messages.addGlobalError("O campo foto é obrigatório");
                 return;
             }
@@ -104,10 +104,11 @@ public class ProdutoBean implements Serializable {
             Produtos produtoRetorno = produtoDAO.merge(produto);
 
             Path origem = Paths.get(produto.getCaminho());
-            Path destino = Paths.get("C:/EclipseJDK/workspace/upload/img_produtos" + produtoRetorno.getCodigo() + ".png");
+            Path destino = Paths.get("C:/EclipseJDK/workspace/upload/img_produtos/" + produtoRetorno.getCodigo() + ".png");
             Files.copy(origem, destino, StandardCopyOption.REPLACE_EXISTING);
 
             produto = new Produtos();
+
             FabricanteDAO fabricanteDAO = new FabricanteDAO();
             fabricantes = fabricanteDAO.listar();
 
