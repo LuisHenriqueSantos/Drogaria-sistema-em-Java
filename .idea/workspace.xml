@@ -14,8 +14,11 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/VendaBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/VendaBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/vendas.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/vendas.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/WEB-INF/classes/br/com/luis/drogaria/bean/VendaBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/WEB-INF/classes/br/com/luis/drogaria/bean/VendaBean.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/pages/vendas.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/pages/vendas.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/bean/VendaBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/bean/VendaBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +59,7 @@
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/ProdutoBean.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/VendaBean.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/dao/ClienteDAO.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/domain/ItemVenda.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/domain/Produtos.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/service/FabricanteService.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" root0="SKIP_INSPECTION" />
@@ -251,7 +255,7 @@
       <workItem from="1680783831043" duration="8000" />
       <workItem from="1680783909527" duration="1830000" />
       <workItem from="1680811864335" duration="886000" />
-      <workItem from="1681132255288" duration="2904000" />
+      <workItem from="1681132255288" duration="11794000" />
     </task>
     <servers />
   </component>
