@@ -74,13 +74,15 @@
                 </p:column>
 
                 <p:column headerText="Opções">
-                <p:commandButton icon="ui-icon-minus" />
+                    <p:commandButton icon="ui-icon-minus" actionListener="#{vendaBean.removerItemCompra}"
+                                     update=":formulario:tabelaCesta">
+                        <f:attribute name="itemSelecionado" value="#{itemVenda}"/>
+                    </p:commandButton>
                 </p:column>
-
             </p:dataTable>
         </p:panel>
 
-        <p:panel header="Total">
+        <p:panel header="Total" filterable="true">
         </p:panel>
     </h:form>
 </h:body>
