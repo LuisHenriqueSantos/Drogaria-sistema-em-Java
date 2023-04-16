@@ -40,7 +40,7 @@
 
                 <p:column headerText="Opções">
                     <p:commandButton icon="ui-icon-plus" actionListener="#{vendaBean.adcionarItem}"
-                                     update=":formulario:tabelaCesta">
+                                     update=":formulario:tabelaCesta :formulario:painelFinalizacao">
                         <f:attribute name="produtoSelecionado" value="#{produto}"/>
                     </p:commandButton>
                 </p:column>
@@ -75,14 +75,21 @@
 
                 <p:column headerText="Opções">
                     <p:commandButton icon="ui-icon-minus" actionListener="#{vendaBean.removerItemCompra}"
-                                     update=":formulario:tabelaCesta">
+                                     update=":formulario:tabelaCesta :formulario:painelFinalizacao">
                         <f:attribute name="itemSelecionado" value="#{itemVenda}"/>
                     </p:commandButton>
                 </p:column>
             </p:dataTable>
         </p:panel>
 
-        <p:panel header="Total" filterable="true">
+        <p:panel header="Venda Total" filterable="true" >
+            <h:panelGrid id="painelFinalizacao" columns="3">
+                <p:outputLabel value="Total R$:" />
+                <h:outputText value="#{vendaBean.venda.valorTotal}">
+                    <f:convertNumber locale="pt_BR" minFractionDigits="2" />
+                </h:outputText>
+                <p:commandButton value="Finalizar Venda" />
+            </h:panelGrid>
         </p:panel>
     </h:form>
 </h:body>

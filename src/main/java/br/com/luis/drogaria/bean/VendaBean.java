@@ -3,6 +3,7 @@ package br.com.luis.drogaria.bean;
 import br.com.luis.drogaria.dao.ProdutoDAO;
 import br.com.luis.drogaria.domain.ItemVenda;
 import br.com.luis.drogaria.domain.Produtos;
+import br.com.luis.drogaria.domain.Venda;
 import org.omnifaces.util.Messages;
 
 import javax.annotation.PostConstruct;
@@ -19,8 +20,17 @@ import java.util.List;
 @ViewScoped
 
 public class VendaBean implements Serializable {
+    private Venda venda;
     private List<Produtos> produtos;
     private List<ItemVenda> itemVendas;
+
+    public Venda getVenda() {
+        return venda;
+    }
+
+    public void setVenda(Venda venda) {
+        this.venda = venda;
+    }
 
     public List<Produtos> getProdutos() {
         return produtos;
@@ -39,8 +49,12 @@ public class VendaBean implements Serializable {
     }
 
     @PostConstruct
-    public void listar() {
+    public void novo() {
         try {
+            venda = new Venda();
+            venda.setValorTotal(new BigDecimal("0.00"));
+
+
             ProdutoDAO produtoDAO = new ProdutoDAO();
             produtos = produtoDAO.listar();
             itemVendas = new ArrayList<>();
@@ -73,21 +87,31 @@ public class VendaBean implements Serializable {
             itemVenda.setQuantidade(new Short(itemVenda.getQuantidade() + 1 + ""));
             itemVenda.setValorParcial(produto.getPreco().multiply(new BigDecimal(itemVenda.getQuantidade())));
         }
-
+        calculaFinalizacaoVenda();
     }
 
     public void removerItemCompra(ActionEvent evento) {
         ItemVenda itemVenda = (ItemVenda) evento.getComponent().getAttributes().get("itemSelecionado");
 
         int achou = -1;
-        for(int posicao = 0; posicao < itemVendas.size(); posicao++){
-            if(itemVendas.get(posicao).getProduto().equals(itemVenda.getProduto())){
+        for (int posicao = 0; posicao < itemVendas.size(); posicao++) {
+            if (itemVendas.get(posicao).getProduto().equals(itemVenda.getProduto())) {
                 achou = posicao;
             }
         }
 
-        if(achou > -1){
+        if (achou > -1) {
             itemVendas.remove(achou);
+        }
+        calculaFinalizacaoVenda();
+    }
+
+    public void calculaFinalizacaoVenda() {
+        venda.setValorTotal(new BigDecimal("0.00"));
+
+        for(int posicao = 0; posicao < itemVendas.size(); posicao++){
+            ItemVenda itemvenda = itemVendas.get(posicao);
+            venda.setValorTotal(venda.getValorTotal().add(itemvenda.getValorParcial()));
         }
     }
 }
