@@ -1,19 +1,26 @@
 package br.com.luis.drogaria.bean;
 
-import br.com.luis.drogaria.dao.ProdutoDAO;
-import br.com.luis.drogaria.domain.ItemVenda;
-import br.com.luis.drogaria.domain.Produtos;
-import br.com.luis.drogaria.domain.Venda;
-import org.omnifaces.util.Messages;
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.ActionEvent;
-import java.io.Serializable;
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
+
+import br.com.luis.drogaria.dao.ClienteDAO;
+import org.omnifaces.util.Messages;
+
+import br.com.luis.drogaria.dao.FuncionarioDAO;
+import br.com.luis.drogaria.dao.ProdutoDAO;
+import br.com.luis.drogaria.domain.Clientes;
+import br.com.luis.drogaria.domain.Funcionario;
+import br.com.luis.drogaria.domain.ItemVenda;
+import br.com.luis.drogaria.domain.Produtos;
+import br.com.luis.drogaria.domain.Venda;
 
 @SuppressWarnings("serial")
 @ManagedBean
@@ -23,7 +30,21 @@ public class VendaBean implements Serializable {
     private Venda venda;
     private List<Produtos> produtos;
     private List<ItemVenda> itemVendas;
+    private List<Clientes> clientes;
+    private List<Funcionario> funcionarios;
 
+    public List<Clientes> getClientes() {
+        return clientes;
+    }
+    public void setClientes(List<Clientes> clientes) {
+        this.clientes = clientes;
+    }
+    public List<Funcionario> getFuncionarios() {
+        return funcionarios;
+    }
+    public void setFuncionarios(List<Funcionario> funcionarios) {
+        this.funcionarios = funcionarios;
+    }
     public Venda getVenda() {
         return venda;
     }
@@ -112,6 +133,19 @@ public class VendaBean implements Serializable {
         for(int posicao = 0; posicao < itemVendas.size(); posicao++){
             ItemVenda itemvenda = itemVendas.get(posicao);
             venda.setValorTotal(venda.getValorTotal().add(itemvenda.getValorParcial()));
+        }
+    }
+
+    public void finalizar(){
+        try {
+            FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+            funcionarios = funcionarioDAO.listarOrdenado();
+
+            ClienteDAO clienteDAO = new ClienteDAO();
+            clientes = clienteDAO.listarOrdenado();
+        }catch(RuntimeException erro){
+            Messages.addFlashGlobalInfo("Ocorrreu um erro ao finalizar a venda!");
+            erro.printStackTrace();
         }
     }
 }
