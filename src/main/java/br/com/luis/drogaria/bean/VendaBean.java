@@ -137,8 +137,9 @@ public class VendaBean implements Serializable {
     }
 
     public void finalizar(){
-        venda.setHorario(new Date());
         try {
+            venda.setHorario(new Date());
+
             FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
             funcionarios = funcionarioDAO.listarOrdenado();
 
@@ -148,5 +149,15 @@ public class VendaBean implements Serializable {
             Messages.addFlashGlobalInfo("Ocorrreu um erro ao finalizar a venda!");
             erro.printStackTrace();
         }
+    }
+    public void salvar(){
+        try {
+            if (venda.getValorTotal().signum() == 0);
+                Messages.addGlobalInfo("Informe pelo menos um item!");
+        }catch (RuntimeException erro){
+            Messages.addGlobalInfo("Ocorreu um erro ao salvar a venda!");
+            erro.printStackTrace();
+        }
+
     }
 }
