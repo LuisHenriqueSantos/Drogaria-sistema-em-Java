@@ -30,7 +30,7 @@ public class VendaDAOTest {
 		vendas.setHorario(new Date(14));
 		vendas.setValorTotal(new BigDecimal("15.60"));
 		vendas.setCliente(clientes);
-		vendas.setFuniconario(funcionario);
+		vendas.setFuncionario(funcionario);
 
 		VendaDAO vendaDAO = new VendaDAO();
 		vendaDAO.salvar(vendas);
@@ -53,7 +53,7 @@ public class VendaDAOTest {
 
 		for (Venda vendas : resultado) {
 			System.out.println(vendas.getHorario() + " - " + vendas.getValorTotal() + " - " + vendas.getCliente()
-					+ " - " + vendas.getFuniconario().getPessoa().getNome());
+					+ " - " + vendas.getFuncionario().getPessoa().getNome());
 		}
 
 	}
@@ -71,7 +71,7 @@ public class VendaDAOTest {
 		} else {
 			System.out.println("Venda encontrada!");
 			System.out.println(vendas.getCodigo() + " - " + vendas.getValorTotal() + vendas.getHorario()
-					+ vendas.getCliente() + " - " + vendas.getFuniconario().getPessoa().getNome());
+					+ vendas.getCliente() + " - " + vendas.getFuncionario().getPessoa().getNome());
 		}
 
 	}
@@ -89,7 +89,7 @@ public class VendaDAOTest {
 			vendaDAO.excluir(vendas);
 			System.out.println("Venda excluida");
 			System.out.println(vendas.getCliente() + " - " + vendas.getHorario() + " - " + vendas.getValorTotal()
-					+ " - " + vendas.getFuniconario());
+					+ " - " + vendas.getFuncionario());
 		}
 	}
 
@@ -110,17 +110,17 @@ public class VendaDAOTest {
 			System.out.println("Nenhuma venda encontrada!");
 		} else {
 			System.out.println(vendas.getHorario() + " - " + vendas.getValorTotal() + " - " + vendas.getCliente()
-					+ " - " + vendas.getFuniconario().getPessoa().getNome());
+					+ " - " + vendas.getFuncionario().getPessoa().getNome());
 
 			vendas.setHorario(new Date(14));
 			vendas.setValorTotal(new BigDecimal("15.60"));
 			vendas.setCliente(clientes);
-			vendas.setFuniconario(funcionario);
+			vendas.setFuncionario(funcionario);
 			vendaDAO.editar(vendas);
 
 			System.out.println("Registro editado - Depois:");
 			System.out.println(vendas.getHorario() + " - " + vendas.getValorTotal() + " - " + vendas.getCliente()
-					+ " - " + vendas.getFuniconario().getPessoa().getNome());
+					+ " - " + vendas.getFuncionario().getPessoa().getNome());
 		}
 
 	}

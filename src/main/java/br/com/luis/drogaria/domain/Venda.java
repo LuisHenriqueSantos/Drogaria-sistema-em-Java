@@ -28,7 +28,7 @@ public class Venda extends GenericDomain {
 
 	@ManyToOne
 	@JoinColumn(nullable = false)
-	private Funcionario funiconario;
+	private Funcionario funcionario;
 
 	public Date getHorario() {
 		return horario;
@@ -54,12 +54,10 @@ public class Venda extends GenericDomain {
 		this.cliente = cliente;
 	}
 
-	public Funcionario getFuniconario() {
-		return funiconario;
+	public Funcionario getFuncionario() {
+		return funcionario;
 	}
-
-	public void setFuniconario(Funcionario funiconario) {
-		this.funiconario = funiconario;
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
 	}
-
 }
