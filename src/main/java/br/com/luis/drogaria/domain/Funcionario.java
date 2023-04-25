@@ -14,7 +14,7 @@ import javax.persistence.TemporalType;
 public class Funcionario extends GenericDomain{
 	
 	@Column (length = 15, nullable = false)
-	private String ScarteiraTrabalho;
+	private String carteiraTrabalho;
 	
 	@Column(nullable = false)
 	@Temporal(TemporalType.DATE)
@@ -24,12 +24,12 @@ public class Funcionario extends GenericDomain{
 	@JoinColumn(nullable = false)
 	private Pessoa pessoa;
 
-	public String getScarteiraTrabalho() {
-		return ScarteiraTrabalho;
+	public String getCarteiraTrabalho() {
+		return carteiraTrabalho;
 	}
 
-	public void setScarteiraTrabalho(String scarteiraTrabalho) {
-		ScarteiraTrabalho = scarteiraTrabalho;
+	public void setCarteiraTrabalho(String carteiraTrabalho) {
+		this.carteiraTrabalho = carteiraTrabalho;
 	}
 
 	public Date getDataAdimissao() {
