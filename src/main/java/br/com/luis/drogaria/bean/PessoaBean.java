@@ -182,16 +182,16 @@ public class PessoaBean implements Serializable {
         }
     }
 
-    public static boolean EmailValidador(String email) {
-        boolean result = true;
-        try {
-            InternetAddress emailAddr = new InternetAddress(email);
-            emailAddr.validate();
-        } catch (AddressException ex) {
-            result = false;
-        }
-        return result;
-    }
+//    public static boolean EmailValidador(String email) {
+//        boolean result = true;
+//        try {
+//            InternetAddress emailAddr = new InternetAddress(email);
+//            emailAddr.validate();
+//        } catch (AddressException ex) {
+//            result = false;
+//        }
+//        return result;
+//    }
 
 }
 

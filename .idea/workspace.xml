@@ -10,23 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00cb2549-fb7c-43cc-9c00-f1a2b9437cc0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/FuncionarioBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/VendaBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/VendaBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/dao/VendaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/dao/VendaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/domain/ItemVenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/domain/ItemVenda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/vendas.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/vendas.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/PessoaBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/PessoaBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/funcionarios.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/funcionarios.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/pessoas.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/pessoas.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/WEB-INF/classes/br/com/luis/drogaria/bean/VendaBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/WEB-INF/classes/br/com/luis/drogaria/bean/VendaBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/WEB-INF/classes/br/com/luis/drogaria/dao/VendaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/WEB-INF/classes/br/com/luis/drogaria/dao/VendaDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/WEB-INF/classes/br/com/luis/drogaria/domain/ItemVenda.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/WEB-INF/classes/br/com/luis/drogaria/domain/ItemVenda.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/pages/vendas.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/pages/vendas.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/bean/VendaBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/bean/VendaBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/dao/VendaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/dao/VendaDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/domain/ItemVenda.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/domain/ItemVenda.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/br.com.luis.drogaria/Drogaria/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/br.com.luis.drogaria/Drogaria/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/WEB-INF/classes/br/com/luis/drogaria/bean/PessoaBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/WEB-INF/classes/br/com/luis/drogaria/bean/PessoaBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/pages/funcionarios.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/pages/funcionarios.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/pages/pessoas.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/pages/pessoas.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/bean/PessoaBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/bean/PessoaBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,13 +59,16 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/scratches/Learning.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/CidadeBean.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/FabricanteBean.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/FuncionarioBean.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/PessoaBean.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/ProdutoBean.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/VendaBean.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/dao/ClienteDAO.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/dao/FuncionarioDAO.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/dao/GenericDAO.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/dao/VendaDAO.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/domain/Funcionario.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/domain/GenericDomain.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/domain/ItemVenda.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/domain/Pessoa.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/domain/Produtos.java" root0="SKIP_INSPECTION" />
@@ -78,6 +76,7 @@
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/service/FabricanteService.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/pages/funcionarios.xhtml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/webapp/pages/vendas.xhtml" root0="SKIP_INSPECTION" />
   </component>
   <component name="LogFilters">
@@ -227,17 +226,36 @@
         </option>
       </method>
     </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
-      <deployment />
-      <server-settings />
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration default="true" type="aws.lambda" factoryName="Local">
+      <option name="credentialProviderId" />
+      <option name="regionId" />
+      <option name="debugHost" value="localhost" />
+      <option name="architecture" />
+      <option name="environmentVariables">
+        <map />
+      </option>
+      <option name="handler" />
+      <option name="image" value="false" />
+      <option name="logicalFunctionName" />
+      <option name="memorySize" value="128" />
+      <option name="pathMappings">
+        <list />
+      </option>
+      <option name="platform" />
+      <option name="runtime" />
+      <option name="templateFile" />
+      <option name="timeout" value="300" />
+      <option name="useTemplate" value="false" />
+      <option name="input" />
+      <option name="inputIsFile" value="false" />
+      <sam>
+        <option name="additionalBuildArgs" />
+        <option name="additionalLocalArgs" />
+        <option name="buildInContainer" value="false" />
+        <option name="dockerNetwork" />
+        <option name="skipImagePull" value="false" />
+      </sam>
+      <method v="2" />
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

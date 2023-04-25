@@ -159,15 +159,6 @@
 				<p:inputText id="email" maxlength="100" size="50"
 					value="#{pessoaBean.pessoa.email}" required="true"
 					requiredMessage="O campo 'Email' é obrigatório" />
-
-				<h:outputText value="@" for="email" />
-				<p:inputText id="email" value="#{pessoaBean.pessoa.email}"
-					requiredMessage="Digite um E-mail válido"
-					validatorMessage="Email inválido. EX:joao@gmail.com">
-					<p:ajax event="blur" update="validaEmaill"
-						listener="#{usuario.validaEmail()}" />  // validação via ajax
-	</p:inputText>
-
 			</h:panelGrid>
 
 			<h:panelGrid columns="2">
