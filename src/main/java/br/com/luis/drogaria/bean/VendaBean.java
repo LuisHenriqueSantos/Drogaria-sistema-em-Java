@@ -75,9 +75,9 @@ public class VendaBean implements Serializable {
             venda = new Venda();
             venda.setValorTotal(new BigDecimal("0.00"));
 
-
             ProdutoDAO produtoDAO = new ProdutoDAO();
             produtos = produtoDAO.listar();
+
             itensVendas = new ArrayList<>();
         } catch (RuntimeException erro) {
             Messages.addGlobalError("Erro ao carregar a tela de venda!");
@@ -183,6 +183,8 @@ public class VendaBean implements Serializable {
             }
             VendaDAO vendaDAO = new VendaDAO();
             vendaDAO.salvar(venda, itensVendas);
+
+            novo();
 
             Messages.addGlobalInfo("Venda realizada com sucesso!");
         } catch (RuntimeException erro) {
