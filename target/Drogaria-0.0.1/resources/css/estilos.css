@@ -11,3 +11,6 @@
 .divCabecalho{
     padding-top: 5px
 }
+.ui-widget, .ui-widget .ui-widget{
+    font-size: 100%;
+}
