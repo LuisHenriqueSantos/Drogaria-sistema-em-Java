@@ -9,10 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00cb2549-fb7c-43cc-9c00-f1a2b9437cc0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/templates/modelo.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/templates/modelo.xhtml" afterDir="false" />
-    </list>
+    <list default="true" id="00cb2549-fb7c-43cc-9c00-f1a2b9437cc0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -298,7 +295,7 @@
       <workItem from="1682510076952" duration="880000" />
       <workItem from="1682516097169" duration="93000" />
       <workItem from="1682516204241" duration="20000" />
-      <workItem from="1682516237074" duration="7804000" />
+      <workItem from="1682516237074" duration="8573000" />
     </task>
     <servers />
   </component>
