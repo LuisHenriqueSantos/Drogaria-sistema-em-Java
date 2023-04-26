@@ -112,21 +112,44 @@ public class VendaBean implements Serializable {
     }
 
     public void removerItemCompra(ActionEvent evento) {
-        ItemVenda itemVenda = (ItemVenda) evento.getComponent().getAttributes().get("itemSelecionado");
+        ItemVenda itemVenda = (ItemVenda) evento.getComponent().getAttributes().get("botaoSelecionado");
 
         int achou = -1;
-        for (int posicao = 0; posicao < itensVendas.size(); posicao++) {
-            if (itensVendas.get(posicao).getProduto().equals(itemVenda.getProduto())) {
-                achou = posicao;
+
+        for (int i = 0; i < itensVendas.size(); i++) {
+            if (itensVendas.get(i).getProduto().equals(itemVenda.getProduto())) {
+                achou = i;
             }
         }
 
-        if (achou > -1) {
-            itensVendas.remove(achou);
-        }
+        itensVendas.remove(achou);
         calculaFinalizacaoVenda();
     }
 
+
+    public void diminuirItem(ActionEvent evento) {
+        ItemVenda itemVendaEvento = (ItemVenda) evento.getComponent().getAttributes().get("itemSelecionado");
+
+        int achou = -1;
+
+        for (int i = 0; i < itensVendas.size(); i++) {
+            if (itensVendas.get(i).getProduto().equals(itemVendaEvento.getProduto())) {
+                achou = i;
+            }
+        }
+
+        if (achou >= 0) {
+            ItemVenda itemVenda = itensVendas.get(achou);
+            itemVenda.setQuantidade(new Short(itemVenda.getQuantidade() - 1 + ""));
+            itemVenda.setValorParcial(itemVenda.getValorParcial().subtract(itemVenda.getProduto().getPreco()));
+
+            if (itemVenda.getQuantidade() <= 0) {
+                itensVendas.remove(achou);
+            }
+        }
+
+        calculaFinalizacaoVenda();
+    }
     public void calculaFinalizacaoVenda() {
         venda.setValorTotal(new BigDecimal("0.00"));
 

@@ -78,12 +78,30 @@
 
                 <p:column headerText="Opções">
                     <p:commandButton icon="ui-icon-minus"
-                                     actionListener="#{vendaBean.removerItemCompra}"
+                                     actionListener="#{vendaBean.diminuirItem}"
                                      update=":formulario:tabelaCesta :formulario:painelFinalizacao">
                         <f:attribute name="itemSelecionado" value="#{itemVenda}"/>
                     </p:commandButton>
+
+                    <p:commandButton icon="ui-icon-trash"
+                                     actionListener="#{vendaBean.removerItemCompra}"
+                                     update=":formulario:tabelaCesta :formulario:painelFinalizacao">
+                        <p:confirm header="Confirmação" message="Deseja excluir esse produto da venda?"
+                                   icon="ui-icon-alert"/>
+                        <f:attribute name="itemSelecionado" value="#{itemVenda}"/>
+                        <f:attribute name="botaoSelecionado" value="#{itemVenda}"/>
+                    </p:commandButton>
                 </p:column>
+
             </p:dataTable>
+
+            <p:confirmDialog global="true">
+                <p:commandButton value="Sim" type="button"
+                                 styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>
+                <p:commandButton value="Não" type="button"
+                                 styleClass="ui-confirmdialog-no" icon="ui-icon-close"/>
+            </p:confirmDialog>
+
         </p:panel>
         <p>
             <br/>
