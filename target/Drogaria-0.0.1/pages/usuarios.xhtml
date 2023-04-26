@@ -15,7 +15,7 @@
 		<p:panel header="Usuários - Listagem">
 			<p:dataTable id="tabela" emptyMessage="Nenhum registro encontrado."
 				paginator="true" value="#{usuarioBean.usuarios}" var="usuario"
-				rows="5">
+				rows="5" paginatorPosition="bottom">
 				<f:facet name="header">
 					<p:commandButton value="Novo" oncomplete="PF('dialogo').show();"
 						actionListener="#{usuarioBean.novo}"
@@ -45,12 +45,11 @@
 					<h:outputText value="#{usuario.ativoFormatado}" />
 				</p:column>
 
-				<p:column headerText="#{msg.headerText}">
+				<p:column headerText="Opções">
 					<p:commandButton icon="ui-icon-trash"
 						actionListener="#{usuarioBean.excluir}"
 						update=":mensagem :formListagem:tabela">
-						<p:confirm header="Confirmação"
-							message="Deseja excluir esse usuário?" icon="ui-icon-alert" />
+						<p:confirm header="Confirmação"	message="Deseja excluir esse usuário?" icon="ui-icon-alert" />
 						<f:attribute name="usuarioSelecionado" value="#{usuario}" />
 					</p:commandButton>
 
@@ -58,6 +57,7 @@
 						actionListener="#{usuarioBean.editar}"
 						update=":mensagem :formCadastro:painel"
 						oncomplete="PF('dialogo').show();">
+						<p:confirm header="Confirmação" message="Deseja editar esse usuário?" icon="ui-icon-alert" />
 						<f:attribute name="usuarioSelecionado" value="#{usuario}" />
 						<f:actionListener
 							type="org.omnifaces.eventlistener.ResetInputAjaxActionListener" />

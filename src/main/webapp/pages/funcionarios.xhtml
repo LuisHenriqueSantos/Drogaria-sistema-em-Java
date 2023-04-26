@@ -16,7 +16,7 @@
     <h:form id="formListagem">
         <p:panel header="Funcionario - Listagem">
             <p:dataTable id="tabela" emptyMessage="Nenhum registro encontrado."
-                         paginator="true" value="#{funcionarioBean.funcionarios}" var="funcionario" rows="5">
+                         paginator="true" value="#{funcionarioBean.funcionarios}" var="funcionario" rows="5" paginatorPosition="bottom">
                 <f:facet name="header">
                     <p:commandButton value="Novo" actionListener="#{funcionarioBean.novo}"
                                      oncomplete="PF('dialogo').show();"
@@ -26,12 +26,12 @@
                     </p:commandButton>
                 </f:facet>
 
-                <p:column headerText="Carteira de Trabalho"
-                          sortBy="">
+                <p:column headerText="Carteira de Trabalho" filterBy="#{funcionario.carteiraTrabalho}"
+                          sortBy="#{funcionario.carteiraTrabalho}">
                     <h:outputText value="#{funcionario.carteiraTrabalho}" />
                 </p:column>
 
-                <p:column headerText="Data de Adimissão" >
+                <p:column headerText="Data de Adimissão" filterBy="#{funcionario.dataAdimissao}" sortBy="#{funcionario.dataAdimissao}" >
                     <h:outputText value="#{funcionario.dataAdimissao}">
                         <f:convertDateTime locale="pt_BR" />
                     </h:outputText>
@@ -43,7 +43,7 @@
 
                 <p:column headerText="Opções">
                     <p:commandButton icon="ui-icon-trash"
-                                     actionListener="#{fabricanteBean.excluir}"
+                                     actionListener="#{funcionarioBean.excluir}"
                                      update=":mensagem :formListagem:tabela">
                         <p:confirm header="Confirmação" message="Deseja excluir este funcionário?"
                                    icon="ui-icon-alert" />
@@ -51,9 +51,10 @@
                     </p:commandButton>
 
                     <p:commandButton icon="ui-icon-pencil"
-                                     actionListener="#{fabricanteBean.editar}"
+                                     actionListener="#{funcionarioBean.editar}"
                                      update=":mensagem :formCadastro:painel"
                                      oncomplete="PF('dialogo').show();">
+                        <p:confirm header="Confirmação"	message="Deseja editar esse funcionário?" icon="ui-icon-alert" />
                         <f:attribute name="funcionarioSelecionado" value="#{funcionario}" />
                         <f:actionListener
                                 type="org.omnifaces.eventlistener.ResetInputAjaxActionListener" />

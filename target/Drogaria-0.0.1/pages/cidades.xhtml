@@ -15,7 +15,7 @@
 	<h:form id="frmlistar">
 		<p:panel header="Cidades - Listagem">
 			<p:dataTable id="tabela" emptyMessage="Nenhum registro encontrado."
-				paginator="true" value="#{cidadeBean.cidades}" var="cidade" rows="5">
+				paginator="true" value="#{cidadeBean.cidades}" var="cidade" rows="5" paginatorPosition="bottom">
 				<f:facet name="header">
 					<p:commandButton value="Novo" actionListener="#{cidadeBean.novo}"
 						oncomplete="PF('dialogo').show();"
@@ -41,8 +41,7 @@
 					<p:commandButton icon="ui-icon-trash"
 						actionListener="#{cidadeBean.excluir}"
 						update=":mensagem: frmlistar:tabela">
-						<p:confirm header="confirmação"
-							message="Deseja excluir essa cidade? " icon="ui-icon-alert" />
+						<p:confirm header="confirmação"	message="Deseja excluir essa cidade? " icon="ui-icon-alert" />
 						<f:attribute name="cidadeSelecionada" value="#{cidade}" />
 					</p:commandButton>
 
@@ -50,6 +49,7 @@
 						actionListener="#{cidadeBean.editar}"
 						update="mensagem :formCadastro:painel"
 						oncomplete="PF('dialogo').show();">
+					<p:confirm header="Confirmação" message="Deseja editar essa cidade?" icon="ui-icon-alert" />
 						<f:attribute name="cidadeSelecionada" value="#{cidade}" />
 						<f:actionListener
 							type="org.omnifaces.eventlistener.ResetInputAjaxActionListener" />

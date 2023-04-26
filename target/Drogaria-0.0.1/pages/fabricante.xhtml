@@ -16,7 +16,7 @@
 		<p:panel header=" - Listagem">
 			<p:dataTable id="tabela" emptyMessage="Nenhum registro encontrado."
 				paginator="true" value="#{fabricanteBean.fabricantes}"
-				var="fabricante" rows="5">
+				var="fabricante" rows="5" paginatorPosition="bottom">
 				<f:facet name="header">
 					<p:commandButton value="Novo"
 						actionListener="#{fabricanteBean.novo()}"
@@ -41,8 +41,7 @@
 					<p:commandButton icon="ui-icon-trash"
 						actionListener="#{fabricanteBean.excluir}"
 						update=":mensagem :formlistagem:tabela">
-						<p:confirm header="Confirmação"
-							message="Deseja excluir esse fabricante?" icon="ui-icon-alert" />
+						<p:confirm header="Confirmação"	message="Deseja excluir esse fabricante?" icon="ui-icon-alert" />
 						<f:attribute name="fabricanteSelecionado" value="#{fabricante}" />
 					</p:commandButton>
 
@@ -50,6 +49,7 @@
 						actionListener="#{fabricanteBean.editar}"
 						update="mensagem :formCadastro:painel"
 						oncomplete="PF('dialogo').show();">
+						<p:confirm header="Confirmação"	message="Deseja editar esse fabricante?" icon="ui-icon-alert" />
 						<f:attribute name="fabricanteSelecionado" value="#{fabricante}" />
 						<f:actionListener
 							type="org.omnifaces.eventlistener.ResetInputAjaxActionListener" />
