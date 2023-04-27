@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2023-04-27T12:38:23 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cidades" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d2f7b940-25a5-4954-9159-c6634ffbdc15">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Drogaria Data Adapter "/>
+	<queryString language="SQL">
+		<![CDATA[SELECT drogaria_db.cidade.nome,
+	drogaria_db.estado.nome,
+	drogaria_db.estado.sigla
+FROM drogaria_db.cidade
+	INNER JOIN drogaria_db.estado ON 
+	 drogaria_db.cidade.estado_codigo = drogaria_db.estado.codigo 
+ORDER BY drogaria_db.cidade.nome ASC,
+	drogaria_db.estado.nome ASC]]>
+	</queryString>
+	<field name="nome" class="java.lang.String"/>
+	<field name="COLUMN_2" class="java.lang.String"/>
+	<field name="sigla" class="java.lang.String"/>
+	<group name="nome">
+		<groupExpression><![CDATA[$F{nome}]]></groupExpression>
+	</group>
+	<group name="COLUMN_2">
+		<groupExpression><![CDATA[$F{COLUMN_2}]]></groupExpression>
+	</group>
+	<group name="sigla">
+		<groupExpression><![CDATA[$F{sigla}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="137" splitType="Stretch">
+			<image hAlign="Center">
+				<reportElement x="150" y="0" width="290" height="137" uuid="3cc7f668-a34e-405d-93cf-89740c68612b"/>
+				<imageExpression><![CDATA["C:/Users/ljesus/Documents/GitHub/Drogaria/src/main/webapp/resources/img/Banner.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="550" height="30" uuid="c42a3665-1d4b-45dc-8b5c-8c40ff834e3e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" size="18" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Relatório de cidades]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="76ed7172-f55b-47b4-b938-6267bf1e35c9"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="470" y="0" width="100" height="30" uuid="8838abaf-41ba-41e9-8b32-e7a3abde40a0"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SIGLA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="0" width="100" height="30" uuid="a0dabacb-a1eb-454c-8528-3987b7f5cf51"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ESTADO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="30" uuid="4f813a7e-cc74-4499-8d36-f90380743f67"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="470" y="0" width="100" height="30" uuid="f56cfabf-321b-4a57-9f61-2e31d3ab5f02"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sigla}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="227" y="0" width="100" height="30" uuid="c62449a2-b511-4937-8682-fa194fa523c6"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COLUMN_2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="550" height="30" uuid="1b4cfd22-7aae-4dda-be05-d772775f9dcb"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Rua: Não sei onde fica, CEP: 00.000-000, Ipaussu -SP ]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

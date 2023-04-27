@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2023-04-27T10:26:19 -->
+<!-- 2023-04-27T10:43:16 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="estados" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2d3867ca-2d43-4796-b3b4-ea82116bcc66">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Drogaria Data Adapter "/>
@@ -13,9 +13,9 @@ ORDER BY drogaria_db.estado.nome ASC]]>
 	<field name="nome" class="java.lang.String"/>
 	<field name="sigla" class="java.lang.String"/>
 	<title>
-		<band height="80" splitType="Stretch">
+		<band height="150" splitType="Stretch">
 			<image hAlign="Center">
-				<reportElement x="80" y="0" width="400" height="80" uuid="4d649f42-53ba-48e8-b4fa-eff274945f2e"/>
+				<reportElement x="80" y="0" width="400" height="150" uuid="4d649f42-53ba-48e8-b4fa-eff274945f2e"/>
 				<imageExpression><![CDATA["C:/Users/ljesus/Documents/GitHub/Drogaria/src/main/webapp/resources/img/Banner.png"]]></imageExpression>
 			</image>
 		</band>
@@ -36,14 +36,14 @@ ORDER BY drogaria_db.estado.nome ASC]]>
 			<staticText>
 				<reportElement x="0" y="0" width="100" height="30" uuid="d3f2672c-9243-40e2-8c6b-28a896e8f6e3"/>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[NOME]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="227" y="0" width="100" height="30" uuid="803abeb6-4b2d-44ca-bbc7-6c6ceaacfd87"/>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[SIGLA]]></text>
 			</staticText>
@@ -54,14 +54,14 @@ ORDER BY drogaria_db.estado.nome ASC]]>
 			<textField>
 				<reportElement x="0" y="0" width="100" height="30" uuid="f250adde-e85c-49ec-8a2a-58e6258b9723"/>
 				<textElement>
-					<font size="12" isBold="false"/>
+					<font size="14" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="230" y="0" width="100" height="30" uuid="90d520e4-6905-43d7-acac-2f9750193054"/>
 				<textElement>
-					<font size="12" isBold="false"/>
+					<font size="14" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{sigla}]]></textFieldExpression>
 			</textField>
