@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2023-04-27T10:43:20 -->
+<!-- 2023-05-13T13:39:10 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="produtos" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3027600d-34c7-4c0e-bb92-2231108a5ac2">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Drogaria Data Adapter "/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="289"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="706"/>
+	<parameter name="PRODUTO_DESCRICAO" class="java.lang.String"/>
+	<parameter name="FABRICANTE_DESCRICAO" class="java.lang.String"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT drogaria_db.produtos.descricao AS pdescricao,
 	drogaria_db.produtos.preco,
@@ -12,6 +16,9 @@
 FROM drogaria_db.produtos
 	INNER JOIN drogaria_db.fabricante ON 
 	 drogaria_db.produtos.fabricante_codigo = drogaria_db.fabricante.codigo 
+WHERE 
+	 drogaria_db.produtos.descricao LIKE $P{PRODUTO_DESCRICAO} 
+	 AND drogaria_db.fabricante.descricao LIKE $P{FABRICANTE_DESCRICAO} 
 ORDER BY drogaria_db.produtos.descricao ASC,
 	drogaria_db.fabricante.descricao ASC]]>
 	</queryString>
@@ -27,7 +34,7 @@ ORDER BY drogaria_db.produtos.descricao ASC,
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
-				<imageExpression><![CDATA["C:/Users/ljesus/Documents/GitHub/Drogaria/src/main/webapp/resources/img/Banner.png"]]></imageExpression>
+				<imageExpression><![CDATA["C:\\Users\\luish\\OneDrive\\Documentos\\GitHub\\Drogaria\\src\\main\\webapp\\resources\\img\\Banner.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>
