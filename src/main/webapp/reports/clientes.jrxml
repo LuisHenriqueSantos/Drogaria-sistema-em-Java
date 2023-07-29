@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2023-07-29T17:59:03 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="clientes" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="98fe0467-daf1-4f51-a45b-18dd487dffb1">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="ZHJvZ2FyaWFfZGIuY2xpZW50ZXMgQVMgLDI4LDY0LDRlZjZiZDkwLWZjMzAtNDdmOS05MWE2LTEz&#xA;NWZjZWQwYWNhYztkcm9nYXJpYV9kYi5wZXNzb2EgQVMgLDI3NSwxMTIsNTFlNGRjNjQtMWJkMy00&#xA;NmMwLTg0NzYtYThmYjNkNTI2N2ZkOw=="/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Drogaria"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT drogaria_db.clientes.`dataCadastro`,
+	drogaria_db.clientes.liberado,
+	drogaria_db.pessoa.cpf,
+	drogaria_db.pessoa.nome
+FROM drogaria_db.clientes
+	INNER JOIN drogaria_db.pessoa ON 
+	 drogaria_db.clientes.pessoa_codigo = drogaria_db.pessoa.codigo 
+ORDER BY drogaria_db.pessoa.nome ASC]]>
+	</queryString>
+	<field name="dataCadastro" class="java.sql.Date"/>
+	<field name="liberado" class="java.lang.Boolean"/>
+	<field name="cpf" class="java.lang.String"/>
+	<field name="nome" class="java.lang.String"/>
+	<title>
+		<band height="150" splitType="Stretch">
+			<image hAlign="Center">
+				<reportElement x="80" y="0" width="400" height="150" uuid="a09d9c2a-c1b8-47c5-bbc3-edaa1091b846"/>
+				<imageExpression><![CDATA["C:\\Users\\luish\\OneDrive\\Documentos\\GitHub\\Drogaria\\src\\main\\webapp\\resources\\img\\Banner.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="0" width="550" height="30" uuid="0c464f7c-bf84-4b6c-8838-3588f2377b5a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" size="18" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Relatório de clientes]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="e6ce1c23-0828-4fef-ac4c-dd81dc738d32"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="2" width="100" height="30" uuid="dc1fa706-4dca-4d81-bf6b-cbe1ec1d22ce"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CPF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="327" y="2" width="130" height="30" uuid="0f361d9e-cb47-440f-9156-e74854f4ca4a"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATA CADASTRO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="463" y="2" width="68" height="30" uuid="e8ab6572-f947-4f26-a1db-2eab2751fd52"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[STATUS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="5" width="204" height="30" uuid="9c6e6869-14cc-488b-bdc4-c7397d4212fb"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="216" y="5" width="100" height="30" uuid="621a3fe2-a3c5-494c-ae3a-643abfaaf768"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpf}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="327" y="5" width="130" height="30" uuid="868d507e-2d3e-46c6-8512-a3b81a5e239e"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dataCadastro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="462" y="2" width="92" height="30" uuid="69440757-3098-45fa-8c2c-8184bf1d04d2"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{liberado} ? "ativo" : "bloqueado"
+]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="550" height="30" uuid="383cbf6c-09e7-46a7-a6a2-499d7c36f3dc"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Rua: Não sei onde fica, CEP: 00.000-000, Ipaussu -SP ]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
