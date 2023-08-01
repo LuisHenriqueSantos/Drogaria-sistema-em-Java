@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2023-07-31T22:15:28 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pessoas" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5fb390fe-51af-4684-9d8a-25f3350612ad">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="ZHJvZ2FyaWFfZGIucGVzc29hIEFTICwyMzEsNTgsMDIwMmEzZTQtZTg3Yi00ZjcwLTg2NzktN2E1&#xA;ZGJjYzAyMjM3Ow=="/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="222"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="773"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Drogaria"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT drogaria_db.pessoa.nome,
+	drogaria_db.pessoa.cpf,
+	drogaria_db.pessoa.nome,
+	drogaria_db.pessoa.cpf,
+	drogaria_db.pessoa.rg,
+	drogaria_db.pessoa.celular
+FROM drogaria_db.pessoa
+ORDER BY drogaria_db.pessoa.nome ASC]]>
+	</queryString>
+	<field name="nome" class="java.lang.String"/>
+	<field name="cpf" class="java.lang.String"/>
+	<field name="COLUMN_3" class="java.lang.String"/>
+	<field name="COLUMN_4" class="java.lang.String"/>
+	<field name="rg" class="java.lang.String"/>
+	<field name="celular" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="150" splitType="Stretch">
+			<image hAlign="Center">
+				<reportElement x="80" y="0" width="400" height="150" uuid="85169578-7c3c-4cfb-9f9e-181e358d9610"/>
+				<imageExpression><![CDATA["C:\\Users\\luish\\OneDrive\\Documentos\\GitHub\\Drogaria\\src\\main\\webapp\\resources\\img\\Banner.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="550" height="30" uuid="7826094a-10bc-49e0-9f34-f0ee62b19865"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" size="18" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Relatório de estados]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="20" y="0" width="100" height="30" uuid="b77dad46-8aaf-4d69-aea1-237eacdd4670"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="0" width="100" height="30" uuid="f8784448-4e58-462f-ae84-b65243bf6591"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CPF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="0" width="100" height="30" uuid="e788a093-7b32-47d8-b6c6-c60d5068ccd4"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="0" width="100" height="30" uuid="9e059e1c-ae11-4380-bae3-77f2c3380841"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Celular]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="20" y="0" width="100" height="30" uuid="f6cf66f5-3305-4a43-8baa-de8aacd41d18"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="0" width="100" height="30" uuid="15d03d71-0903-4eb4-812e-019a0bf9a129"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpf}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="0" width="100" height="30" uuid="c2cd8bdd-300b-487b-837f-4a8d112c1b87"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rg}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="0" width="100" height="30" uuid="dfa4ffc2-eec8-4cd7-9b1a-f1451009cfee"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{celular}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="550" height="30" uuid="9186cb23-437e-4648-8485-8618335d6a1a"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Rua: Não sei onde fica, CEP: 00.000-000, Ipaussu -SP ]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
