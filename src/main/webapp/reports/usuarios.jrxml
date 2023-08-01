@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2023-07-31T22:32:51 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="usuarios" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="521cca9c-f76e-46f2-a8e8-f86454330559">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="ZHJvZ2FyaWFfZGIucGVzc29hIEFTICwyNDgsMTQzLDA0MjQ5ZjdhLWJhNGYtNGIzZS1hYTA0LTQ0&#xA;NGQ2ZDJkYTExNDtkcm9nYXJpYV9kYi51c3VhcmlvIEFTICw3NjksMTA1LDY0YmEwNWI2LWNkOTIt&#xA;NGY2YS1hYmI3LThkN2M5YzExYTAyZjs="/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="203"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="792"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Drogaria"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT drogaria_db.pessoa.nome,
+	drogaria_db.usuario.tipo,
+	drogaria_db.usuario.ativo
+FROM drogaria_db.usuario
+	INNER JOIN drogaria_db.pessoa ON 
+	 drogaria_db.usuario.pessoa_codigo = drogaria_db.pessoa.codigo 
+ORDER BY drogaria_db.pessoa.nome ASC]]>
+	</queryString>
+	<field name="nome" class="java.lang.String"/>
+	<field name="tipo" class="java.lang.String"/>
+	<field name="ativo" class="java.lang.Boolean"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="150" splitType="Stretch">
+			<image hAlign="Center">
+				<reportElement x="80" y="0" width="400" height="150" uuid="53bcd6d1-6d24-48b2-92e0-63f99f3e2cfa"/>
+				<imageExpression><![CDATA["C:\\Users\\luish\\OneDrive\\Documentos\\GitHub\\Drogaria\\src\\main\\webapp\\resources\\img\\Banner.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="550" height="30" uuid="b38abfbb-39a5-4a99-a3ce-0b7a958887c9"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" size="18" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Relatório de usuários]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="20" y="2" width="100" height="30" uuid="01d9c8ed-80f5-4497-b08e-b218bc9eb08e"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="2" width="100" height="30" uuid="9bba39b5-c5e4-422f-8501-0d4411cfe1ec"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIPO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="2" width="100" height="30" uuid="9d1fb3a8-0213-4766-a78d-52451afb078f"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ATIVO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="20" y="0" width="100" height="30" uuid="5c4aaff7-c904-4c3f-85b9-4c8134b64341"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="0" width="100" height="30" uuid="ae04ee3a-9a16-41dd-a6be-af89ae5451e7"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipo}.equals("A") ? "Administrador" : $F{tipo}.equals("G") ? "Gerente" : "Balconista"
+]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="2" width="100" height="30" uuid="82a9b0f9-0caa-40a9-8ce1-2563926f7329"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ativo} ? "Sim" : "Não"
+]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="550" height="30" uuid="57953feb-18db-4f57-9189-782cf995cf94"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Rua: Não sei onde fica, CEP: 00.000-000, Ipaussu -SP ]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
