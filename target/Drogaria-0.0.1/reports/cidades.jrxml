@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2023-04-27T12:38:23 -->
+<!-- 2023-05-13T12:46:47 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cidades" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d2f7b940-25a5-4954-9159-c6634ffbdc15">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Drogaria Data Adapter "/>
@@ -33,7 +33,7 @@ ORDER BY drogaria_db.cidade.nome ASC,
 		<band height="137" splitType="Stretch">
 			<image hAlign="Center">
 				<reportElement x="150" y="0" width="290" height="137" uuid="3cc7f668-a34e-405d-93cf-89740c68612b"/>
-				<imageExpression><![CDATA["C:/Users/ljesus/Documents/GitHub/Drogaria/src/main/webapp/resources/img/Banner.png"]]></imageExpression>
+				<imageExpression><![CDATA["C:\\Users\\luish\\OneDrive\\Documentos\\GitHub\\Drogaria\\src\\main\\webapp\\resources\\img\\Banner.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>

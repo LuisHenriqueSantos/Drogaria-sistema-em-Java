@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2023-07-31T22:02:44 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="funcionarios" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="37085f96-0356-444f-b9a0-6a71f58e8945">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="ZHJvZ2FyaWFfZGIucGVzc29hIEFTICw0NCwzOCxjNDNlMDk2Ni04NWY4LTQ1MzEtOTM3Zi05ZmQ1&#xA;ZDEzOGFiZTE7ZHJvZ2FyaWFfZGIuZnVuY2lvbmFyaW8gQVMgLDMwMiw4NSwzNjZlNzY3ZS00NjY3&#xA;LTQwMTctODNjYi1hZTY4MTQyMTEwYmI7"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Drogaria"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT drogaria_db.pessoa.nome,
+	drogaria_db.funcionario.pessoa_codigo,
+	drogaria_db.pessoa.nome,
+	drogaria_db.pessoa.celular,
+	drogaria_db.funcionario.`dataAdimissao`
+FROM drogaria_db.funcionario
+	INNER JOIN drogaria_db.pessoa ON 
+	 drogaria_db.funcionario.pessoa_codigo = drogaria_db.pessoa.codigo 
+ORDER BY drogaria_db.pessoa.nome ASC]]>
+	</queryString>
+	<field name="nome" class="java.lang.String"/>
+	<field name="pessoa_codigo" class="java.lang.Long"/>
+	<field name="COLUMN_3" class="java.lang.String"/>
+	<field name="celular" class="java.lang.String"/>
+	<field name="dataAdimissao" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="150" splitType="Stretch">
+			<image hAlign="Center">
+				<reportElement x="80" y="0" width="400" height="150" uuid="2cd3e136-3ec4-4237-89eb-78121ecb2f57"/>
+				<imageExpression><![CDATA["C:\\Users\\luish\\OneDrive\\Documentos\\GitHub\\Drogaria\\src\\main\\webapp\\resources\\img\\Banner.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="550" height="30" uuid="ea1f493c-8b6a-476c-b448-b2e0468c08f0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" size="18" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Relatório de fabricantes]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="235" y="0" width="80" height="30" uuid="7b89fd0d-edc7-4181-94d6-dfad414a72c0"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CELULAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="46108311-e719-472d-86ab-3d58879dceef"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CÓDIGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="0" width="110" height="30" uuid="e12cea94-2b9e-423d-b507-263eedbef651"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATA AMISSÃO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="0" width="100" height="30" uuid="8ee96091-4051-44a1-85cc-8f8158b22eca"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOME]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="30" uuid="4dd45396-835f-403c-bf37-0142a57dcfca"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pessoa_codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="0" width="100" height="30" uuid="30fb4062-9d78-42df-b17f-e51913ba33fd"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="235" y="0" width="100" height="30" uuid="5aac51c3-0a05-4d34-a184-fba6d8263b4e"/>
+				<textElement textAlignment="Left">
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{celular}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="0" width="110" height="30" uuid="3da49dc1-2a4b-48b6-b012-f80ec3eee0a6"/>
+				<textElement textAlignment="Left">
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dataAdimissao}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="550" height="30" uuid="f0bb4f93-bb9b-4eb6-a21b-c549ab12a618"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Rua: Não sei onde fica, CEP: 00.000-000, Ipaussu -SP ]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

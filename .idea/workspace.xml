@@ -10,89 +10,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00cb2549-fb7c-43cc-9c00-f1a2b9437cc0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/bulma.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/css/bulma-rtl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/css/bulma-rtl.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/css/bulma-rtl.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/css/bulma.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/css/bulma.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/css/bulma.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/base/_all.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/base/animations.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/base/generic.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/base/helpers.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/base/minireset.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/components/_all.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/components/breadcrumb.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/components/card.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/components/dropdown.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/components/level.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/components/media.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/components/menu.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/components/message.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/components/modal.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/components/navbar.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/components/pagination.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/components/panel.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/components/tabs.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/elements/_all.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/elements/box.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/elements/button.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/elements/container.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/elements/content.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/elements/form.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/elements/icon.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/elements/image.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/elements/notification.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/elements/other.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/elements/progress.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/elements/table.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/elements/tag.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/elements/title.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/form/_all.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/form/checkbox-radio.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/form/file.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/form/input-textarea.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/form/select.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/form/shared.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/form/tools.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/grid/_all.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/grid/columns.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/grid/tiles.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/helpers/_all.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/helpers/color.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/helpers/flexbox.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/helpers/float.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/helpers/other.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/helpers/overflow.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/helpers/position.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/helpers/spacing.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/helpers/typography.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/helpers/visibility.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/layout/_all.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/layout/footer.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/layout/hero.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/layout/section.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/utilities/_all.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/utilities/animations.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/utilities/controls.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/utilities/derived-variables.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/utilities/extends.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/utilities/functions.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/utilities/initial-variables.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bulma/sass/utilities/mixins.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/CidadeBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/CidadeBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/cidades.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/cidades.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/WEB-INF/classes/br/com/luis/drogaria/bean/CidadeBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/WEB-INF/classes/br/com/luis/drogaria/bean/CidadeBean.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/pages/cidades.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/pages/cidades.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/reports/cidades.jasper" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/reports/cidades.jasper" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/reports/cidades.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/reports/cidades.jrxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/reports/estados.jasper" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/reports/estados.jasper" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/reports/estados.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/reports/estados.jrxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/reports/produtos.jasper" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/reports/produtos.jasper" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/reports/produtos.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/reports/produtos.jrxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/bean/CidadeBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/bean/ClienteBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/bean/EstadoBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/bean/FabricanteBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/domain/Cidade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/domain/Clientes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/domain/Estado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/domain/GenericDomain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/domain/Pessoa.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,11 +39,6 @@
   </component>
   <component name="CompilerWorkspaceConfiguration">
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
-  </component>
-  <component name="DatabaseLocalColorSettings">
-    <colors>
-      <entry key="aa3a989d-4043-48c0-b8c6-c68ca38e9399" value="Blue" />
-    </colors>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -190,6 +123,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "Maven.Drogaria [clean].executor": "Run",
+    "Maven.Drogaria [install].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Tomcat Server.Tomcat 8.5.87.executor": "Debug",
