@@ -136,6 +136,26 @@ modules.xml
 
 # Ruby plugin and RubyMine
 
+.DS_Store
+.ruby-version
+npm-debug.log
+test.css
+test.css.map
+test.html
+test.sass
+test.css
+test.css.map
+
+# Folders
+
+.idea/
+.sass-cache
+_gh_pages
+_site
+dev
+node_modules
+test/output/
+
 # Crashlytics plugin (for Android Studio and IntelliJ)
 
 ### Intellij+iml Patch ###
