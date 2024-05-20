@@ -10,16 +10,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00cb2549-fb7c-43cc-9c00-f1a2b9437cc0" name="Changes" comment="">
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/META-INF/MANIFEST.MF" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/WEB-INF/classes/br/com/luis/drogaria/bean/CidadeBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/WEB-INF/classes/br/com/luis/drogaria/bean/CidadeBean.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/pages/cidades.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/pages/cidades.xhtml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/produtos.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/produtos.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/pages/produtos.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/pages/produtos.xhtml" afterDir="false" />
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/reports/cidades.jasper" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/reports/cidades.jasper" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/reports/cidades.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/reports/cidades.jrxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/reports/estados.jasper" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/reports/estados.jasper" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/reports/estados.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/reports/estados.jrxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/reports/produtos.jasper" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/reports/produtos.jasper" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Drogaria-0.0.1/reports/produtos.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Drogaria-0.0.1/reports/produtos.jrxml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/bean/CidadeBean.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/bean/ClienteBean.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/bean/EstadoBean.class" beforeDir="false" />
@@ -31,6 +39,8 @@
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/luis/drogaria/domain/Pessoa.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+=======
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +75,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/CidadeBean.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/FabricanteBean.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/bean/FuncionarioBean.java" root0="SKIP_INSPECTION" />
@@ -83,6 +94,7 @@
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/domain/Produtos.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/domain/Venda.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/service/FabricanteService.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/br/com/luis/drogaria/util/HibernateUtil.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/webapp/pages/cidades.xhtml" root0="SKIP_INSPECTION" />
@@ -112,6 +124,9 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2MLNBKiidYk6cekK5Q61cCmU4BH" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -120,6 +135,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< Updated upstream
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
@@ -144,6 +160,32 @@
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "show.migrate.to.gradle.popup": "false",
     "vue.rearranger.settings.migration": "true"
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 8.5.87.executor&quot;: &quot;Debug&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/luish/OneDrive/Documentos/GitHub/Drogaria/src/main/webapp/reports&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+>>>>>>> Stashed changes
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -258,6 +300,13 @@
       </method>
     </configuration>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-1.8.0_402-corretto-1.8.0_402-4caba194b151-ae57be32" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -299,6 +348,14 @@
       <workItem from="1682516204241" duration="20000" />
       <workItem from="1682516237074" duration="8573000" />
       <workItem from="1682595295235" duration="6346000" />
+      <workItem from="1705417127083" duration="622000" />
+      <workItem from="1705418169121" duration="7000" />
+      <workItem from="1705418412467" duration="791000" />
+      <workItem from="1711451113149" duration="7000" />
+      <workItem from="1711451127948" duration="293000" />
+      <workItem from="1711451465806" duration="78000" />
+      <workItem from="1711451607907" duration="508000" />
+      <workItem from="1711452157443" duration="160000" />
     </task>
     <servers />
   </component>
